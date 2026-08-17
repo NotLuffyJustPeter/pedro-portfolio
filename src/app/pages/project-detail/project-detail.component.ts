@@ -11,6 +11,10 @@ import {
 } from '../../shared/project-showcases/kave-showcase/kave-showcase.component';
 
 import {
+  NoraShowcaseComponent
+} from '../../shared/project-showcases/nora-showcase/nora-showcase.component';
+
+import {
   Component,
   OnDestroy,
   inject,
@@ -45,6 +49,7 @@ import {
     ArcanaShowcaseComponent,
     RomaShowcaseComponent,
     KaveShowcaseComponent,
+    NoraShowcaseComponent,
   ],
 
   templateUrl: './project-detail.component.html',

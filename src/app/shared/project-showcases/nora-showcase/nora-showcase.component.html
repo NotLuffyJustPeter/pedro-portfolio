@@ -1,0 +1,293 @@
+<div class="nora-showcase">
+
+  <div class="nora-showcase__glow"></div>
+
+
+  <!-- GAME PANEL -->
+
+  <div class="game-panel">
+
+    <div class="game-panel__header">
+
+      <div class="game-panel__title">
+
+        <span class="status-dot"></span>
+
+        PROJECT ZOMBOID
+
+      </div>
+
+      <span class="build-label">
+        B42 · LUA
+      </span>
+
+    </div>
+
+
+    <div class="game-panel__content">
+
+      <div class="npc-portrait">
+
+        <div class="npc-portrait__silhouette">
+
+          <div class="npc-head"></div>
+
+          <div class="npc-body"></div>
+
+        </div>
+
+        <span>
+          COMPANION
+        </span>
+
+      </div>
+
+
+      <div class="npc-info">
+
+        <small>
+          NPC PROFILE
+        </small>
+
+        <h3>
+          Nora Hayes
+        </h3>
+
+        <p>
+          Persistent Companion
+        </p>
+
+
+        <div class="npc-stats">
+
+          <div>
+
+            <span>
+              AFFINITY
+            </span>
+
+            <strong>
+              87 / 100
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              RELATIONSHIP
+            </span>
+
+            <strong>
+              TRUSTED
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              STATE
+            </span>
+
+            <strong class="state-active">
+              ACTIVE
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ROLE
+            </span>
+
+            <strong>
+              MEDIC
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="affinity">
+
+          <div class="affinity__header">
+
+            <span>
+              Affinity
+            </span>
+
+            <span>
+              87%
+            </span>
+
+          </div>
+
+          <div class="affinity__track">
+
+            <span></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- LUA TERMINAL -->
+
+  <div class="lua-terminal">
+
+    <div class="lua-terminal__header">
+
+      <div class="terminal-controls">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+      <small>
+        companion_state.lua
+      </small>
+
+    </div>
+
+
+    <div class="lua-terminal__body">
+
+      <div class="line">
+
+        <span class="line-number">
+          01
+        </span>
+
+        <code>
+          <span class="code-keyword">if</span>
+          affinity >= 75
+          <span class="code-keyword">then</span>
+        </code>
+
+      </div>
+
+
+      <div class="line">
+
+        <span class="line-number">
+          02
+        </span>
+
+        <code class="indent">
+          unlockDialogue()
+        </code>
+
+      </div>
+
+
+      <div class="line">
+
+        <span class="line-number">
+          03
+        </span>
+
+        <code class="indent">
+          relationship =
+          <span class="code-string">
+            "trusted"
+          </span>
+        </code>
+
+      </div>
+
+
+      <div class="line">
+
+        <span class="line-number">
+          04
+        </span>
+
+        <code>
+          <span class="code-keyword">
+            end
+          </span>
+        </code>
+
+      </div>
+
+
+      <div class="line line--spacing">
+
+        <span class="line-number">
+          05
+        </span>
+
+        <code></code>
+
+      </div>
+
+
+      <div class="line">
+
+        <span class="line-number">
+          06
+        </span>
+
+        <code>
+          saveCompanionState()
+        </code>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- SYSTEM BADGES -->
+
+  <div class="system-status">
+
+    <div>
+
+      <span class="system-status__dot"></span>
+
+      <small>
+        PERSISTENCE
+      </small>
+
+      <strong>
+        ACTIVE
+      </strong>
+
+    </div>
+
+
+    <div>
+
+      <span class="system-status__dot"></span>
+
+      <small>
+        MULTIPLAYER
+      </small>
+
+      <strong>
+        SERVER-AWARE
+      </strong>
+
+    </div>
+
+  </div>
+
+</div>

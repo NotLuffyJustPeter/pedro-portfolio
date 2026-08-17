@@ -603,6 +603,218 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'nora-hayes',
     name: 'Nora Hayes Companion Patch'
   }
+},
+
+{
+  slug: 'nora-hayes',
+
+  eyebrow: 'SYSTEMS PROJECT · 04',
+
+  title: 'Nora Hayes Companion Patch',
+
+  subtitle:
+    'Persistent NPC & Dialogue Extension for Project Zomboid',
+
+  description:
+    'A Lua addon that extends existing Project Zomboid NPC mods with a persistent fictional companion, contextual dialogue, affinity progression, narrative state and multiplayer-aware behavior.',
+
+  technologies: [
+    'Lua',
+    'Project Zomboid',
+    'State Management',
+    'Persistence',
+    'Multiplayer',
+    'Game Modding'
+  ],
+
+  meta: [
+    {
+      label: 'ROLE',
+      value: 'Lua Developer'
+    },
+    {
+      label: 'TYPE',
+      value: 'Game Systems Addon'
+    },
+    {
+      label: 'STATUS',
+      value: 'Functional Prototype'
+    },
+    {
+      label: 'PLATFORM',
+      value: 'Project Zomboid B42'
+    }
+  ],
+
+  problemTitle:
+    'Turning a generic NPC into a persistent character.',
+
+  problem: [
+    'Existing NPC systems could provide functional companions, but they were primarily designed around generic characters and behaviors.',
+
+    'The goal was to create a specific fictional companion whose identity, dialogue, affinity, relationship state and narrative progression could remain consistent throughout a long-running game.',
+
+    'The system also needed to behave correctly around save/load cycles and multiplayer, where client-side and server-side responsibilities introduce additional complexity.'
+  ],
+
+  solutionTitle:
+    'An extension layer built around persistent state.',
+
+  solution: [
+    'The companion patch extends Bandits NPC and True Companions instead of replacing their existing systems.',
+
+    'Custom Lua logic identifies the companion and attaches additional state related to affinity, relationship progression, dialogue availability, quests and persistence.',
+
+    'The addon also introduces safeguards around restoration, spawning and multiplayer execution so companion behavior remains consistent across different game sessions.'
+  ],
+
+  architecture: [
+    {
+      label: 'Project Zomboid',
+      description: 'Game runtime'
+    },
+    {
+      label: 'Bandits NPC',
+      description: 'NPC foundation'
+    },
+    {
+      label: 'True Companions',
+      description: 'Companion behavior'
+    },
+    {
+      label: 'Lua Patch',
+      description: 'Custom state & systems'
+    }
+  ],
+
+  features: [
+    {
+      number: '01',
+
+      title: 'Persistent Identity',
+
+      description:
+        'Custom logic maintains the fictional companion identity and associated state instead of relying exclusively on dynamically generated NPC data.'
+    },
+
+    {
+      number: '02',
+
+      title: 'Affinity System',
+
+      description:
+        'Interactions can depend on an affinity value used to represent progression in the relationship between player and companion.'
+    },
+
+    {
+      number: '03',
+
+      title: 'Contextual Dialogue',
+
+      description:
+        'Dialogue availability can depend on affinity, relationship state, previous interactions and cooldown conditions.'
+    },
+
+    {
+      number: '04',
+
+      title: 'Narrative Quests',
+
+      description:
+        'The companion can use custom quest states to represent narrative progression instead of relying only on isolated generic events.'
+    },
+
+    {
+      number: '05',
+
+      title: 'Save / Load Persistence',
+
+      description:
+        'Relevant companion data can be serialized and restored when the game is closed and later loaded again.'
+    },
+
+    {
+      number: '06',
+
+      title: 'Multiplayer-Aware Logic',
+
+      description:
+        'Certain operations distinguish between client and server responsibilities to reduce duplicate or inconsistent multiplayer behavior.'
+    }
+  ],
+
+  challenges: [
+    {
+      number: '01',
+
+      title: 'Extending Existing Mods',
+
+      description:
+        'The addon needed to understand and integrate with systems that were not originally designed specifically for the custom companion.'
+    },
+
+    {
+      number: '02',
+
+      title: 'Persistent State',
+
+      description:
+        'Affinity, relationship information, quest progress and identity had to survive save and load cycles without rebuilding the NPC incorrectly.'
+    },
+
+    {
+      number: '03',
+
+      title: 'Duplicate Prevention',
+
+      description:
+        'Restoring a persistent companion requires checking whether the character already exists before creating another instance.'
+    },
+
+    {
+      number: '04',
+
+      title: 'Client / Server Behavior',
+
+      description:
+        'Operations that work in single player may require different execution paths in multiplayer, especially around spawning and state ownership.'
+    },
+
+    {
+      number: '05',
+
+      title: 'Event Debugging',
+
+      description:
+        'A highly event-driven mod environment required diagnosing runtime behavior through logs, Lua errors and controlled reproduction of issues.'
+    },
+
+    {
+      number: '06',
+
+      title: 'Mod Interoperability',
+
+      description:
+        'The patch needed to add functionality without unnecessarily breaking or replacing behavior provided by its dependencies.'
+    }
+  ],
+
+  learnings: [
+    'Working inside an unfamiliar codebase often requires understanding existing assumptions before adding new behavior.',
+
+    'Persistent systems should define a stable identity independently from temporary runtime objects.',
+
+    'Multiplayer development requires a clear distinction between actions that belong to the client and actions that must be authoritative on the server.',
+
+    'Logs and controlled reproduction are essential when debugging event-driven systems with multiple interacting mods.'
+  ],
+
+  visual: 'nora',
+
+  nextProject: {
+    slug: 'arcana',
+    name: 'ARCANA'
+  }
 }
 
 ];
