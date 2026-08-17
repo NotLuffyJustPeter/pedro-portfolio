@@ -1,71 +1,620 @@
-<section class="project-detail">
+@if (project(); as currentProject) {
 
-  <div class="container">
-
-    <a
-      class="back-link"
-      routerLink="/"
-      fragment="projects"
-    >
-      ← Back to projects
-    </a>
+  <article class="case-study">
 
 
-    @if (project) {
+    <!-- HERO -->
 
-      <div class="project-detail__header">
+    <header class="case-hero">
 
-        <span>
-          {{ project.type }}
-        </span>
+      <div class="container">
 
 
-        <h1>
-          {{ project.name }}
-        </h1>
+        <a
+          class="back-link"
+          routerLink="/"
+          fragment="projects"
+        >
+          ← Back to projects
+        </a>
 
 
-        <p>
-          {{ project.subtitle }}
-        </p>
+        <div class="case-hero__content">
+
+          <span class="case-eyebrow">
+
+            {{ currentProject.eyebrow }}
+
+          </span>
 
 
-        <div class="project-detail__technologies">
+          <h1>
 
-          @for (
-            technology of project.technologies;
-            track technology
-          ) {
+            {{ currentProject.title }}
+
+          </h1>
+
+
+          <p class="case-hero__subtitle">
+
+            {{ currentProject.subtitle }}
+
+          </p>
+
+
+          <p class="case-hero__description">
+
+            {{ currentProject.description }}
+
+          </p>
+
+
+          <div class="case-hero__technologies">
+
+            @for (
+              technology of currentProject.technologies;
+              track technology
+            ) {
+
+              <span>
+
+                {{ technology }}
+
+              </span>
+
+            }
+
+          </div>
+
+
+        </div>
+
+
+        <div class="case-hero__visual">
+
+          <div class="arcana-showcase">
+
+            <div class="showcase-orbit"></div>
+
+
+            <div
+              class="
+                showcase-card
+                showcase-card--left
+              "
+            >
+              ✦
+            </div>
+
+
+            <div
+              class="
+                showcase-card
+                showcase-card--center
+              "
+            >
+              ☽
+            </div>
+
+
+            <div
+              class="
+                showcase-card
+                showcase-card--right
+              "
+            >
+              ✧
+            </div>
+
+
+            <span class="showcase-label">
+
+              AI READING ENGINE
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </header>
+
+
+
+    <!-- META -->
+
+    <section class="case-meta">
+
+      <div class="container case-meta__grid">
+
+        @for (
+          item of currentProject.meta;
+          track item.label
+        ) {
+
+          <div class="case-meta__item">
 
             <span>
-              {{ technology }}
+
+              {{ item.label }}
+
             </span>
+
+            <strong>
+
+              {{ item.value }}
+
+            </strong>
+
+          </div>
+
+        }
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PROBLEM -->
+
+    <section class="case-section">
+
+      <div class="container case-two-column">
+
+
+        <div>
+
+          <span class="section-number">
+
+            01
+
+          </span>
+
+          <span class="section-label">
+
+            THE PROBLEM
+
+          </span>
+
+        </div>
+
+
+        <div class="case-copy">
+
+          <h2>
+
+            {{ currentProject.problemTitle }}
+
+          </h2>
+
+
+          @for (
+            paragraph of currentProject.problem;
+            track paragraph
+          ) {
+
+            <p>
+
+              {{ paragraph }}
+
+            </p>
 
           }
 
         </div>
 
+
       </div>
 
+    </section>
 
-      <div class="project-detail__placeholder">
+
+
+    <!-- SOLUTION -->
+
+    <section
+      class="
+        case-section
+        case-section--alternate
+      "
+    >
+
+      <div class="container case-two-column">
+
+
+        <div>
+
+          <span class="section-number">
+
+            02
+
+          </span>
+
+          <span class="section-label">
+
+            THE SOLUTION
+
+          </span>
+
+        </div>
+
+
+        <div class="case-copy">
+
+          <h2>
+
+            {{ currentProject.solutionTitle }}
+
+          </h2>
+
+
+          @for (
+            paragraph of currentProject.solution;
+            track paragraph
+          ) {
+
+            <p>
+
+              {{ paragraph }}
+
+            </p>
+
+          }
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ARCHITECTURE -->
+
+    <section class="case-section">
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-number">
+
+              03
+
+            </span>
+
+            <span class="section-label">
+
+              ARCHITECTURE
+
+            </span>
+
+          </div>
+
+
+          <h2>
+
+            How the pieces
+            <span>
+              connect.
+            </span>
+
+          </h2>
+
+        </div>
+
+
+        <div class="architecture">
+
+          @for (
+            node of currentProject.architecture;
+            track node.label;
+            let last = $last
+          ) {
+
+            <div class="architecture__node">
+
+              <span class="architecture__indicator">
+
+                {{ $index + 1 }}
+
+              </span>
+
+
+              <strong>
+
+                {{ node.label }}
+
+              </strong>
+
+
+              @if (node.description) {
+
+                <small>
+
+                  {{ node.description }}
+
+                </small>
+
+              }
+
+            </div>
+
+
+            @if (!last) {
+
+              <div
+                class="architecture__connection"
+                aria-hidden="true"
+              >
+                →
+              </div>
+
+            }
+
+          }
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FEATURES -->
+
+    <section
+      class="
+        case-section
+        case-section--alternate
+      "
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-number">
+              04
+            </span>
+
+            <span class="section-label">
+              KEY FEATURES
+            </span>
+
+          </div>
+
+
+          <h2>
+
+            What the platform
+            <span>
+              can do.
+            </span>
+
+          </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+          @for (
+            feature of currentProject.features;
+            track feature.number
+          ) {
+
+            <article class="feature">
+
+              <span>
+
+                {{ feature.number }}
+
+              </span>
+
+
+              <h3>
+
+                {{ feature.title }}
+
+              </h3>
+
+
+              <p>
+
+                {{ feature.description }}
+
+              </p>
+
+            </article>
+
+          }
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CHALLENGES -->
+
+    <section class="case-section">
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-number">
+              05
+            </span>
+
+            <span class="section-label">
+              TECHNICAL CHALLENGES
+            </span>
+
+          </div>
+
+
+          <h2>
+
+            Problems worth
+            <span>
+              solving.
+            </span>
+
+          </h2>
+
+        </div>
+
+
+        <div class="challenge-list">
+
+          @for (
+            challenge of currentProject.challenges;
+            track challenge.number
+          ) {
+
+            <article class="challenge">
+
+              <span class="challenge__number">
+
+                {{ challenge.number }}
+
+              </span>
+
+
+              <h3>
+
+                {{ challenge.title }}
+
+              </h3>
+
+
+              <p>
+
+                {{ challenge.description }}
+
+              </p>
+
+            </article>
+
+          }
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- LEARNINGS -->
+
+    <section
+      class="
+        case-section
+        case-section--alternate
+      "
+    >
+
+      <div class="container case-two-column">
+
+
+        <div>
+
+          <span class="section-number">
+            06
+          </span>
+
+          <span class="section-label">
+            LEARNINGS
+          </span>
+
+        </div>
+
+
+        <div class="learning-list">
+
+          @for (
+            learning of currentProject.learnings;
+            track learning
+          ) {
+
+            <div class="learning">
+
+              <span>
+                →
+              </span>
+
+              <p>
+
+                {{ learning }}
+
+              </p>
+
+            </div>
+
+          }
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- NEXT -->
+
+    <section class="case-next">
+
+      <div class="container">
 
         <span>
-          CASE STUDY
+          NEXT PROJECT
         </span>
 
-        <h2>
-          Coming in the next sprint.
-        </h2>
+        <a
+          [routerLink]="[
+            '/project',
+            'roma-app'
+          ]"
+        >
 
-        <p>
-          {{ project.description }}
-        </p>
+          Roma APP
+
+          <span>
+            →
+          </span>
+
+        </a>
 
       </div>
 
-    }
+    </section>
 
-  </div>
 
-</section>
+  </article>
+
+}
