@@ -1,17 +1,50 @@
 <section
   id="projects"
-  class="placeholder-section"
+  class="projects"
 >
 
   <div class="container">
 
-    <h2>
-      Featured Projects
-    </h2>
 
-    <p>
-      ARCANA · Roma APP · KAVE Sys · Nora Hayes
-    </p>
+    <div class="projects__heading">
+
+      <div>
+
+        <span class="section-kicker">
+          SELECTED WORK
+        </span>
+
+        <h2>
+          Featured Projects
+        </h2>
+
+      </div>
+
+
+      <p>
+        A selection of applications and systems
+        I've built across web, mobile, AI and
+        software integration.
+      </p>
+
+    </div>
+
+
+    <div class="projects__list">
+
+      @for (
+        project of projects;
+        track project.id
+      ) {
+
+        <app-project-card
+          [project]="project"
+        />
+
+      }
+
+    </div>
+
 
   </div>
 

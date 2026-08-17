@@ -1,1 +1,71 @@
-<p>project-detail works!</p>
+<section class="project-detail">
+
+  <div class="container">
+
+    <a
+      class="back-link"
+      routerLink="/"
+      fragment="projects"
+    >
+      ← Back to projects
+    </a>
+
+
+    @if (project) {
+
+      <div class="project-detail__header">
+
+        <span>
+          {{ project.type }}
+        </span>
+
+
+        <h1>
+          {{ project.name }}
+        </h1>
+
+
+        <p>
+          {{ project.subtitle }}
+        </p>
+
+
+        <div class="project-detail__technologies">
+
+          @for (
+            technology of project.technologies;
+            track technology
+          ) {
+
+            <span>
+              {{ technology }}
+            </span>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <div class="project-detail__placeholder">
+
+        <span>
+          CASE STUDY
+        </span>
+
+        <h2>
+          Coming in the next sprint.
+        </h2>
+
+        <p>
+          {{ project.description }}
+        </p>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>

@@ -1,1 +1,314 @@
-<p>project-card works!</p>
+<article
+  class="project-card"
+  [class.project-card--arcana]="project().slug === 'arcana'"
+  [class.project-card--roma]="project().slug === 'roma-app'"
+  [class.project-card--kave]="project().slug === 'kave-sys'"
+  [class.project-card--nora]="project().slug === 'nora-hayes'"
+>
+
+  <!-- INFO -->
+
+  <div class="project-card__content">
+
+    <div class="project-card__top">
+
+      <span class="project-card__number">
+        0{{ project().id }}
+      </span>
+
+      <span class="project-card__type">
+        {{ project().type }}
+      </span>
+
+    </div>
+
+
+    @if (project().clientProject) {
+
+      <div class="client-badge">
+
+        <span>
+          ✓
+        </span>
+
+        Delivered Client Project
+
+      </div>
+
+    }
+
+
+    <h3>
+      {{ project().name }}
+    </h3>
+
+
+    <p class="project-card__subtitle">
+      {{ project().subtitle }}
+    </p>
+
+
+    <p class="project-card__description">
+      {{ project().shortDescription }}
+    </p>
+
+
+    <div class="project-card__technologies">
+
+      @for (
+        technology of project().technologies;
+        track technology
+      ) {
+
+        <span>
+          {{ technology }}
+        </span>
+
+      }
+
+    </div>
+
+
+    <div class="project-card__actions">
+
+      <a
+        class="project-link"
+        [routerLink]="['/project', project().slug]"
+      >
+
+        View Case Study
+
+        <span>
+          →
+        </span>
+
+      </a>
+
+
+      @if (project().github) {
+
+        <a
+          class="external-link"
+          [href]="project().github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+
+      }
+
+
+      @if (project().demo) {
+
+        <a
+          class="external-link"
+          [href]="project().demo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Live Demo ↗
+        </a>
+
+      }
+
+    </div>
+
+  </div>
+
+
+  <!-- VISUAL -->
+
+  <div class="project-card__visual">
+
+    @if (project().slug === 'arcana') {
+
+      <div class="arcana-preview">
+
+        <div class="arcana-preview__card arcana-preview__card--one">
+          ✦
+        </div>
+
+        <div class="arcana-preview__card arcana-preview__card--two">
+          ☽
+        </div>
+
+        <div class="arcana-preview__card arcana-preview__card--three">
+          ✧
+        </div>
+
+        <div class="preview-label">
+          AI READING ENGINE
+        </div>
+
+      </div>
+
+    }
+
+
+    @if (project().slug === 'roma-app') {
+
+      <div class="roma-preview">
+
+        <div class="phone phone--back">
+
+          <div class="phone__screen">
+
+            <span class="phone__label">
+              Inventory
+            </span>
+
+            <div class="phone__product"></div>
+            <div class="phone__line"></div>
+            <div class="phone__line phone__line--short"></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="phone phone--front">
+
+          <div class="phone__screen">
+
+            <span class="phone__label">
+              Roma APP
+            </span>
+
+            <div class="phone__image"></div>
+
+            <strong>
+              Furniture Catalog
+            </strong>
+
+            <small>
+              Stock · Sales · Locations
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+
+    @if (project().slug === 'kave-sys') {
+
+      <div class="kave-preview">
+
+        <div class="dashboard">
+
+          <div class="dashboard__sidebar">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+
+          <div class="dashboard__content">
+
+            <div class="dashboard__header">
+              Inventory Dashboard
+            </div>
+
+
+            <div class="dashboard__stats">
+
+              <div>
+                <strong>
+                  248
+                </strong>
+
+                <small>
+                  Products
+                </small>
+              </div>
+
+
+              <div>
+                <strong>
+                  12
+                </strong>
+
+                <small>
+                  Low stock
+                </small>
+              </div>
+
+            </div>
+
+
+            <div class="dashboard__chart">
+
+              <span style="height: 35%"></span>
+              <span style="height: 65%"></span>
+              <span style="height: 48%"></span>
+              <span style="height: 82%"></span>
+              <span style="height: 60%"></span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+
+    @if (project().slug === 'nora-hayes') {
+
+      <div class="nora-preview">
+
+        <div class="nora-code">
+
+          <div class="nora-code__header">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <small>
+              companion.lua
+            </small>
+
+          </div>
+
+
+          <pre><code><span class="code-purple">if</span> affinity >= requiredAffinity <span class="code-purple">then</span>
+
+  unlockDialogue()
+
+  companion.state =
+    <span class="code-green">"trusted"</span>
+
+<span class="code-purple">end</span></code></pre>
+
+        </div>
+
+
+        <div class="nora-status">
+
+          <span class="nora-status__dot"></span>
+
+          NPC STATE
+
+          <strong>
+            PERSISTENT
+          </strong>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</article>
