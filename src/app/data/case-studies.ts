@@ -811,10 +811,6 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   visual: 'nora',
 
-  nextProject: {
-    slug: 'arcana',
-    name: 'ARCANA'
-  }
 }
 
 ];

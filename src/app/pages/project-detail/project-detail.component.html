@@ -569,37 +569,51 @@
 
     <!-- NEXT -->
 
-@if (currentProject.nextProject; as next) {
-
   <section class="case-next">
 
     <div class="container">
 
-      <span>
-        NEXT PROJECT
-      </span>
-
-
-      <a
-        [routerLink]="[
-          '/project',
-          next.slug
-        ]"
-      >
-
-        {{ next.name }}
+      @if (currentProject.nextProject; as next) {
 
         <span>
-          →
+          NEXT PROJECT
         </span>
 
-      </a>
+        <a
+          [routerLink]="[
+            '/project',
+            next.slug
+          ]"
+        >
+          {{ next.name }}
+
+          <span>
+            →
+          </span>
+        </a>
+
+      } @else {
+
+        <span>
+          END OF SELECTED WORK
+        </span>
+
+        <a
+          routerLink="/"
+          fragment="projects"
+        >
+          Featured Projects
+
+          <span>
+            ↑
+          </span>
+        </a>
+
+      }
 
     </div>
 
   </section>
-
-}
 
   </article>
 
