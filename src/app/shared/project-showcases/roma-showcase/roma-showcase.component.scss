@@ -1,0 +1,342 @@
+:host {
+  display: block;
+}
+
+.roma-showcase {
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d1110,
+      #090b0c
+    );
+}
+
+.roma-showcase__glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(117, 230, 164, 0.055);
+
+  filter: blur(90px);
+}
+
+.roma-phone {
+  position: absolute;
+
+  width: 225px;
+  height: 460px;
+
+  padding: 9px;
+
+  border: 1px solid #343b40;
+  border-radius: 34px;
+
+  background: #060708;
+
+  box-shadow:
+    0 35px 80px
+    rgba(0, 0, 0, 0.48);
+}
+
+.roma-phone--main {
+  z-index: 3;
+
+  transform:
+    translateX(70px)
+    rotate(3deg);
+}
+
+.roma-phone--secondary {
+  z-index: 2;
+
+  opacity: 0.65;
+
+  transform:
+    translateX(-120px)
+    translateY(35px)
+    rotate(-8deg);
+}
+
+.roma-phone__screen {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  padding:
+    25px
+    16px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #171b1b,
+      #0c0f0e
+    );
+}
+
+.roma-app-header {
+  margin-bottom: 24px;
+
+  color: #8be8ad;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+}
+
+.roma-product-image {
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #252b29,
+      #151918
+    );
+
+  span {
+    color: #5b6560;
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.16em;
+  }
+}
+
+.roma-product-info {
+  margin-top: 22px;
+
+  small,
+  strong,
+  span {
+    display: block;
+  }
+
+  small {
+    color: #6f7874;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.1em;
+  }
+
+  strong {
+    margin-top: 7px;
+
+    font-size: 0.82rem;
+  }
+
+  span {
+    margin-top: 6px;
+
+    color: #747d79;
+
+    font-size: 0.55rem;
+  }
+}
+
+.roma-stock {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 8px;
+
+  margin-top: 24px;
+
+  div {
+    padding: 11px;
+
+    border: 1px solid #29302d;
+    border-radius: 9px;
+
+    background: #111513;
+  }
+
+  small,
+  strong {
+    display: block;
+  }
+
+  small {
+    color: #65706a;
+
+    font-size: 0.46rem;
+  }
+
+  strong {
+    margin-top: 5px;
+
+    font-size: 0.75rem;
+  }
+}
+
+.roma-inventory-item {
+  display: grid;
+
+  grid-template-columns:
+    42px 1fr;
+
+  gap: 10px;
+
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  padding: 9px;
+
+  border: 1px solid #252b28;
+  border-radius: 9px;
+
+  background: #111513;
+
+  strong,
+  small {
+    display: block;
+  }
+
+  strong {
+    font-size: 0.55rem;
+  }
+
+  small {
+    margin-top: 4px;
+
+    color: #68716d;
+
+    font-size: 0.48rem;
+  }
+}
+
+.roma-item-image {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 7px;
+
+  background: #252c29;
+}
+
+.roma-delivered {
+  position: absolute;
+  z-index: 5;
+
+  right:
+    clamp(
+      25px,
+      7vw,
+      90px
+    );
+
+  bottom: 45px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    12px
+    15px;
+
+  border:
+    1px solid
+    rgba(117, 230, 164, 0.18);
+
+  border-radius: 11px;
+
+  background:
+    rgba(12, 16, 14, 0.95);
+
+  box-shadow:
+    0 20px 40px
+    rgba(0, 0, 0, 0.3);
+
+  > span {
+    color: #8be8ad;
+  }
+
+  small,
+  strong {
+    display: block;
+  }
+
+  small {
+    color: #68736d;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.08em;
+  }
+
+  strong {
+    margin-top: 3px;
+
+    color: #8be8ad;
+
+    font-size: 0.58rem;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .roma-showcase {
+    min-height: 490px;
+  }
+
+  .roma-phone {
+    width: 165px;
+    height: 345px;
+  }
+
+  .roma-phone--main {
+    transform:
+      translateX(45px)
+      rotate(3deg);
+  }
+
+  .roma-phone--secondary {
+    transform:
+      translateX(-75px)
+      translateY(25px)
+      rotate(-8deg);
+  }
+
+  .roma-product-image {
+    height: 110px;
+  }
+
+  .roma-delivered {
+    right: 15px;
+    bottom: 20px;
+  }
+}

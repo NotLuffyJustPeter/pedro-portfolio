@@ -1,4 +1,13 @@
 import {
+  ArcanaShowcaseComponent
+} from '../../shared/project-showcases/arcana-showcase/arcana-showcase.component';
+
+import {
+  RomaShowcaseComponent
+} from '../../shared/project-showcases/roma-showcase/roma-showcase.component';
+
+
+import {
   Component,
   OnDestroy,
   inject,
@@ -29,7 +38,9 @@ import {
   standalone: true,
 
   imports: [
-    RouterLink
+    RouterLink,
+    ArcanaShowcaseComponent,
+    RomaShowcaseComponent,
   ],
 
   templateUrl: './project-detail.component.html',

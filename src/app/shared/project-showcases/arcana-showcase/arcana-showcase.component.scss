@@ -1,0 +1,172 @@
+:host {
+  display: block;
+}
+
+.arcana-showcase {
+  position: relative;
+
+  min-height: 550px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(124, 92, 252, 0.13),
+      transparent 43%
+    ),
+    #0c0e12;
+}
+
+.showcase-orbit {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  border:
+    1px solid
+    rgba(124, 92, 252, 0.17);
+
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    inset: 50%;
+
+    transform:
+      translate(-50%, -50%);
+
+    border-radius: 50%;
+  }
+
+  &::before {
+    width: 310px;
+    height: 310px;
+
+    border:
+      1px solid
+      rgba(124, 92, 252, 0.12);
+  }
+
+  &::after {
+    width: 530px;
+    height: 530px;
+
+    border:
+      1px solid
+      rgba(124, 92, 252, 0.07);
+  }
+}
+
+.showcase-card {
+  position: absolute;
+
+  width: 170px;
+  height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(154, 131, 255, 0.27);
+
+  border-radius: 12px;
+
+  color: var(--color-accent-light);
+
+  background:
+    linear-gradient(
+      145deg,
+      #17132a,
+      #090a0e
+    );
+
+  box-shadow:
+    0 30px 70px
+    rgba(0, 0, 0, 0.45);
+
+  font-size: 3rem;
+}
+
+.showcase-card--left {
+  transform:
+    translateX(-130px)
+    rotate(-11deg);
+}
+
+.showcase-card--center {
+  z-index: 3;
+
+  transform:
+    translateY(-25px);
+}
+
+.showcase-card--right {
+  transform:
+    translateX(130px)
+    rotate(11deg);
+}
+
+.showcase-label {
+  position: absolute;
+
+  bottom: 45px;
+
+  color: var(--color-text-muted);
+
+  font-family:
+    Consolas,
+    monospace;
+
+  font-size: 0.61rem;
+
+  letter-spacing: 0.18em;
+}
+
+@media (max-width: 650px) {
+
+  .arcana-showcase {
+    min-height: 420px;
+  }
+
+  .showcase-orbit {
+    transform: scale(0.72);
+  }
+
+  .showcase-card {
+    width: 115px;
+    height: 190px;
+
+    font-size: 2rem;
+  }
+
+  .showcase-card--left {
+    transform:
+      translateX(-82px)
+      rotate(-11deg);
+  }
+
+  .showcase-card--center {
+    transform:
+      translateY(-18px);
+  }
+
+  .showcase-card--right {
+    transform:
+      translateX(82px)
+      rotate(11deg);
+  }
+}
