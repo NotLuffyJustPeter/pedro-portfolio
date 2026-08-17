@@ -415,6 +415,194 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'kave-sys',
     name: 'KAVE Sys'
   }
+},
+
+  {
+  slug: 'kave-sys',
+
+  eyebrow: 'BUSINESS PROJECT · 03',
+
+  title: 'KAVE Sys',
+
+  subtitle:
+    'Inventory & Operations Management System',
+
+  description:
+    'A full-stack business application designed to centralize products, warehouse movements, inventory levels, user roles and operational information.',
+
+  technologies: [
+    'Angular',
+    'TypeScript',
+    'Node.js',
+    'Express',
+    'MySQL',
+    'Firebase'
+  ],
+
+  meta: [
+    {
+      label: 'ROLE',
+      value: 'Full-Stack Developer'
+    },
+    {
+      label: 'TYPE',
+      value: 'Business Web Application'
+    },
+    {
+      label: 'STATUS',
+      value: 'Completed'
+    },
+    {
+      label: 'DATABASE',
+      value: 'MySQL'
+    }
+  ],
+
+  problemTitle:
+    'Inventory data needed structure and visibility.',
+
+  problem: [
+    'Managing inventory requires more than storing the number of available products. The system needed to understand product categories, current stock, minimum and maximum levels and the movements responsible for changing inventory.',
+
+    'Warehouse operations also required traceability. Entries and exits needed to remain associated with products and dates so users could understand how inventory evolved over time.',
+
+    'Different users required different levels of access, making authentication and role-based functionality another important part of the application.'
+  ],
+
+  solutionTitle:
+    'A centralized inventory workflow.',
+
+  solution: [
+    'KAVE Sys was designed using a separated Angular frontend and Node.js / Express backend connected through a REST API.',
+
+    'MySQL provides persistent relational storage for products, categories and inventory operations while Firebase handles user authentication.',
+
+    'Business rules interpret stock according to configured minimum and maximum values, helping users quickly identify products that require attention.'
+  ],
+
+  architecture: [
+    {
+      label: 'Angular',
+      description: 'Interface & workflows'
+    },
+    {
+      label: 'Express API',
+      description: 'Business operations'
+    },
+    {
+      label: 'MySQL',
+      description: 'Inventory data'
+    },
+    {
+      label: 'Firebase',
+      description: 'Authentication'
+    }
+  ],
+
+  features: [
+    {
+      number: '01',
+      title: 'Product Catalog',
+      description:
+        'Products can be managed with identifiers, categories, prices, pieces, current stock and configured minimum and maximum inventory levels.'
+    },
+
+    {
+      number: '02',
+      title: 'Inventory Status',
+      description:
+        'Current stock is evaluated against business rules to identify normal inventory, low stock and overstock conditions.'
+    },
+
+    {
+      number: '03',
+      title: 'Warehouse Movements',
+      description:
+        'Entries and exits modify inventory while preserving a history of the operations responsible for those changes.'
+    },
+
+    {
+      number: '04',
+      title: 'Role-Based Access',
+      description:
+        'The interface supports different types of users and adapts available functionality according to their responsibilities.'
+    },
+
+    {
+      number: '05',
+      title: 'Authentication',
+      description:
+        'Firebase Authentication manages user access before protected business functionality becomes available.'
+    },
+
+    {
+      number: '06',
+      title: 'Operational Dashboard',
+      description:
+        'Inventory information can be transformed into indicators and charts to make stock conditions easier to understand.'
+    }
+  ],
+
+  challenges: [
+    {
+      number: '01',
+      title: 'Frontend / Backend Integration',
+      description:
+        'Data originally handled in the frontend had to be migrated toward a real API backed by persistent MySQL storage.'
+    },
+
+    {
+      number: '02',
+      title: 'Inventory Consistency',
+      description:
+        'Entries and exits needed to modify current product stock while maintaining a reliable history of inventory movements.'
+    },
+
+    {
+      number: '03',
+      title: 'Business Rules',
+      description:
+        'Minimum stock, maximum stock and current inventory values needed to produce meaningful operational states throughout the interface.'
+    },
+
+    {
+      number: '04',
+      title: 'Authentication & Roles',
+      description:
+        'Different users required different functionality while the application needed to preserve a consistent authentication state.'
+    },
+
+    {
+      number: '05',
+      title: 'Angular Evolution',
+      description:
+        'The application evolved through newer Angular architecture patterns including standalone components and modern application configuration.'
+    },
+
+    {
+      number: '06',
+      title: 'Environment Configuration',
+      description:
+        'Backend URLs, database credentials, CORS and environment variables needed to remain configurable between development environments.'
+    }
+  ],
+
+  learnings: [
+    'Business rules should exist as explicit application logic rather than only visual conditions inside the interface.',
+
+    'Inventory systems benefit from recording movements separately from the current stock value.',
+
+    'Authentication and authorization should be treated as different responsibilities.',
+
+    'Separating frontend and backend concerns makes the system easier to evolve and debug.'
+  ],
+
+  visual: 'kave',
+
+  nextProject: {
+    slug: 'nora-hayes',
+    name: 'Nora Hayes Companion Patch'
+  }
 }
 
 ];

@@ -6,6 +6,9 @@ import {
   RomaShowcaseComponent
 } from '../../shared/project-showcases/roma-showcase/roma-showcase.component';
 
+import {
+  KaveShowcaseComponent
+} from '../../shared/project-showcases/kave-showcase/kave-showcase.component';
 
 import {
   Component,
@@ -41,6 +44,7 @@ import {
     RouterLink,
     ArcanaShowcaseComponent,
     RomaShowcaseComponent,
+    KaveShowcaseComponent,
   ],
 
   templateUrl: './project-detail.component.html',
