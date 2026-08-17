@@ -1,17 +1,70 @@
 <section
   id="skills"
-  class="placeholder-section"
+  class="technologies"
 >
 
   <div class="container">
 
-    <h2>
-      Technologies
-    </h2>
+    <div class="technologies__heading">
 
-    <p>
-      Angular · Node.js · Flutter · Java · SQL · Cloud
-    </p>
+      <span class="section-kicker">
+        TECHNOLOGIES
+      </span>
+
+      <h2>
+        Tools I work with.
+      </h2>
+
+      <p>
+        Technologies I've used across frontend,
+        backend, mobile development, databases
+        and infrastructure.
+      </p>
+
+    </div>
+
+
+    <div class="technologies__grid">
+
+      @for (
+        group of technologyGroups;
+        track group.title
+      ) {
+
+        <article class="technology-group">
+
+          <div class="technology-group__header">
+
+            <span class="technology-group__dot">
+            </span>
+
+            <h3>
+              {{ group.title }}
+            </h3>
+
+          </div>
+
+
+          <div class="technology-group__list">
+
+            @for (
+              technology of group.technologies;
+              track technology
+            ) {
+
+              <span>
+                {{ technology }}
+              </span>
+
+            }
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
 
   </div>
 
