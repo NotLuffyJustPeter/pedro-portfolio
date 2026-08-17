@@ -572,3 +572,71 @@ h1 {
   }
 
 }
+
+.hero__eyebrow,
+.hero h1,
+.hero__description,
+.hero__actions,
+.hero__stack,
+.hero__visual {
+  opacity: 0;
+
+  animation:
+    heroReveal
+    700ms
+    ease
+    forwards;
+}
+
+.hero h1 {
+  animation-delay: 80ms;
+}
+
+.hero__description {
+  animation-delay: 160ms;
+}
+
+.hero__actions {
+  animation-delay: 240ms;
+}
+
+.hero__stack {
+  animation-delay: 320ms;
+}
+
+.hero__visual {
+  animation-delay: 220ms;
+}
+
+@keyframes heroReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+}
