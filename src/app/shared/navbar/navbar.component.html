@@ -1,1 +1,83 @@
-<p>navbar works!</p>
+<header class="navbar">
+
+  <nav class="navbar__inner container">
+
+    <a
+      class="brand"
+      routerLink="/"
+      aria-label="Pedro Delgado - Home"
+      (click)="closeMenu()"
+    >
+      PD<span>.</span>
+    </a>
+
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+
+    <div
+      class="nav-links"
+      [class.is-open]="menuOpen()"
+    >
+
+      <a
+        [routerLink]="['/']"
+        fragment="projects"
+        (click)="closeMenu()"
+      >
+        Projects
+      </a>
+
+      <a
+        [routerLink]="['/']"
+        fragment="about"
+        (click)="closeMenu()"
+      >
+        About
+      </a>
+
+      <a
+        [routerLink]="['/']"
+        fragment="skills"
+        (click)="closeMenu()"
+      >
+        Skills
+      </a>
+
+      <a
+        [routerLink]="['/']"
+        fragment="contact"
+        (click)="closeMenu()"
+      >
+        Contact
+      </a>
+
+
+      <!-- Cambia TU_USUARIO cuando preparemos tu GitHub -->
+      <a
+        class="github-link"
+        href="https://github.com/NotLuffyJustPeter/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+
+        <span aria-hidden="true">
+          ↗
+        </span>
+      </a>
+
+    </div>
+
+  </nav>
+
+</header>
