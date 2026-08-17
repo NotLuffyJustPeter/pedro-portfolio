@@ -72,50 +72,218 @@
 
         <div class="case-hero__visual">
 
-          <div class="arcana-showcase">
+  @if (currentProject.visual === 'arcana') {
 
-            <div class="showcase-orbit"></div>
+    <div class="arcana-showcase">
+
+      <div class="showcase-orbit"></div>
+
+      <div
+        class="
+          showcase-card
+          showcase-card--left
+        "
+      >
+        ✦
+      </div>
+
+      <div
+        class="
+          showcase-card
+          showcase-card--center
+        "
+      >
+        ☽
+      </div>
+
+      <div
+        class="
+          showcase-card
+          showcase-card--right
+        "
+      >
+        ✧
+      </div>
+
+      <span class="showcase-label">
+        AI READING ENGINE
+      </span>
+
+    </div>
+
+  }
 
 
-            <div
-              class="
-                showcase-card
-                showcase-card--left
-              "
-            >
-              ✦
+  @if (currentProject.visual === 'roma') {
+
+    <div class="roma-showcase">
+
+      <div class="roma-showcase__glow"></div>
+
+
+      <div class="roma-phone roma-phone--secondary">
+
+        <div class="roma-phone__screen">
+
+          <div class="roma-app-header">
+            Inventory
+          </div>
+
+
+          <div class="roma-inventory-item">
+
+            <div class="roma-item-image"></div>
+
+            <div>
+
+              <strong>
+                Living Room Chair
+              </strong>
+
+              <small>
+                Stock: 8
+              </small>
+
             </div>
 
+          </div>
 
-            <div
-              class="
-                showcase-card
-                showcase-card--center
-              "
-            >
-              ☽
+
+          <div class="roma-inventory-item">
+
+            <div class="roma-item-image"></div>
+
+            <div>
+
+              <strong>
+                Dining Table
+              </strong>
+
+              <small>
+                Stock: 3
+              </small>
+
             </div>
 
+          </div>
 
-            <div
-              class="
-                showcase-card
-                showcase-card--right
-              "
-            >
-              ✧
+
+          <div class="roma-inventory-item">
+
+            <div class="roma-item-image"></div>
+
+            <div>
+
+              <strong>
+                Modern Sofa
+              </strong>
+
+              <small>
+                Stock: 5
+              </small>
+
             </div>
-
-
-            <span class="showcase-label">
-
-              AI READING ENGINE
-
-            </span>
 
           </div>
 
         </div>
+
+      </div>
+
+
+      <div class="roma-phone roma-phone--main">
+
+        <div class="roma-phone__screen">
+
+          <div class="roma-app-header">
+            Roma APP
+          </div>
+
+
+          <div class="roma-product-image">
+
+            <span>
+              FURNITURE
+            </span>
+
+          </div>
+
+
+          <div class="roma-product-info">
+
+            <small>
+              FEATURED PRODUCT
+            </small>
+
+            <strong>
+              Roma Collection
+            </strong>
+
+            <span>
+              Inventory · Sales · Locations
+            </span>
+
+          </div>
+
+
+          <div class="roma-stock">
+
+            <div>
+
+              <small>
+                STOCK
+              </small>
+
+              <strong>
+                08
+              </strong>
+
+            </div>
+
+            <div>
+
+              <small>
+                LOCATION
+              </small>
+
+              <strong>
+                A-02
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="roma-delivered">
+
+        <span>
+          ✓
+        </span>
+
+        <div>
+
+          <small>
+            PROJECT STATUS
+          </small>
+
+          <strong>
+            COMPLETED & DELIVERED
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  }
+
+</div>
 
 
       </div>
@@ -587,33 +755,37 @@
 
     <!-- NEXT -->
 
-    <section class="case-next">
+@if (currentProject.nextProject; as next) {
 
-      <div class="container">
+  <section class="case-next">
+
+    <div class="container">
+
+      <span>
+        NEXT PROJECT
+      </span>
+
+
+      <a
+        [routerLink]="[
+          '/project',
+          next.slug
+        ]"
+      >
+
+        {{ next.name }}
 
         <span>
-          NEXT PROJECT
+          →
         </span>
 
-        <a
-          [routerLink]="[
-            '/project',
-            'roma-app'
-          ]"
-        >
+      </a>
 
-          Roma APP
+    </div>
 
-          <span>
-            →
-          </span>
+  </section>
 
-        </a>
-
-      </div>
-
-    </section>
-
+}
 
   </article>
 

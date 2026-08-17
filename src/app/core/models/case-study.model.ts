@@ -48,6 +48,17 @@ export interface CaseStudy {
 
   learnings: string[];
 
+  visual:
+    | 'arcana'
+    | 'roma'
+    | 'kave'
+    | 'nora';
+
+  nextProject?: {
+    slug: string;
+    name: string;
+  };
+
   github?: string;
   demo?: string;
 }
