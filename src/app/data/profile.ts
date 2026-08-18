@@ -10,7 +10,7 @@ export const PROFILE = {
 
   linkedin: 'https://www.linkedin.com/in/pedro-delgado-2aa458103/',
 
-  cv: 'cv/Pedro-Delgado-CV.pdf',
+  cv: 'cv/Pedro-Delgado-CV-2026.pdf',
 
   location: 'México',
 
