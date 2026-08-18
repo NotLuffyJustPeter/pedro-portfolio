@@ -1,212 +1,188 @@
-<section class="what-i-do">
+<section
+  id="services"
+  class="services"
+>
 
   <div class="container">
 
-    <div class="what-i-do__heading">
 
-      <span class="section-kicker">
-        WHAT I DO
-      </span>
+    <!-- HEADER -->
 
-      <h2>
-        From idea
+    <div class="services__header">
+
+      <div class="services__eyebrow">
+
         <span>
-          to working product.
-        </span>
-      </h2>
-
-    </div>
-
-
-    <div class="services">
-
-
-      <!-- FULL STACK -->
-
-      <article class="service-card">
-
-        <div class="service-card__number">
-          01
-        </div>
-
-
-        <div class="service-card__icon">
-          &lt;/&gt;
-        </div>
-
-
-        <h3>
-          Full-Stack
-          Development
-        </h3>
-
-
-        <p>
-          Building complete web applications
-          connecting modern interfaces with
-          APIs, databases and external services.
-        </p>
-
-
-        <div class="service-card__tags">
-
-          <span>
-            Frontend
-          </span>
-
-          <span>
-            Backend
-          </span>
-
-          <span>
-            APIs
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <!-- MOBILE -->
-
-      <article class="service-card">
-
-        <div class="service-card__number">
-          02
-        </div>
-
-
-        <div class="service-card__icon">
-          ◇
-        </div>
-
-
-        <h3>
-          Mobile
-          Applications
-        </h3>
-
-
-        <p>
-          Developing mobile applications focused
-          on real workflows, inventory systems
-          and business operations.
-        </p>
-
-
-        <div class="service-card__tags">
-
-          <span>
-            Flutter
-          </span>
-
-          <span>
-            Dart
-          </span>
-
-          <span>
-            REST
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <!-- BACKEND -->
-
-      <article class="service-card">
-
-        <div class="service-card__number">
-          03
-        </div>
-
-
-        <div class="service-card__icon">
-          &#123; &#125;
-        </div>
-
-
-        <h3>
-          Backend &
-          Architecture
-        </h3>
-
-
-        <p>
-          Designing APIs, business logic,
-          databases and integrations that
-          connect the different parts of
-          an application.
-        </p>
-
-
-        <div class="service-card__tags">
-
-          <span>
-            Node.js
-          </span>
-
-          <span>
-            Java
-          </span>
-
-          <span>
-            SQL
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <!-- AI -->
-
-      <article class="service-card">
-
-        <div class="service-card__number">
           04
-        </div>
+        </span>
+
+        WHAT I DO
+
+      </div>
 
 
-        <div class="service-card__icon">
-          ✦
-        </div>
+      <div class="services__heading">
 
+        <h2>
 
-        <h3>
-          AI
-          Integration
-        </h3>
+          From idea
+          <span>
+            to implementation.
+          </span>
+
+        </h2>
 
 
         <p>
-          Integrating generative AI into
-          applications using structured data,
-          dynamic prompts and external APIs.
+
+          I build software across the stack,
+          combining interfaces, backend systems,
+          data and external services into complete
+          applications.
+
         </p>
 
-
-        <div class="service-card__tags">
-
-          <span>
-            Gemini
-          </span>
-
-          <span>
-            Prompts
-          </span>
-
-          <span>
-            AI APIs
-          </span>
-
-        </div>
-
-      </article>
-
+      </div>
 
     </div>
+
+
+
+    <!-- SERVICES -->
+
+    <div class="services__grid">
+
+      @for (
+        service of services;
+        track service.number;
+        let index = $index
+      ) {
+
+        <article
+          class="service-card"
+
+          appReveal
+
+          [revealDelay]="
+            index * 90
+          "
+        >
+
+
+          <!-- TOP -->
+
+          <div class="service-card__top">
+
+            <span class="service-card__number">
+
+              {{ service.number }}
+
+            </span>
+
+
+            <div class="service-card__icon">
+
+              @switch (index) {
+
+                @case (0) {
+
+                  <span>
+                    &#123; &#125;
+                  </span>
+
+                }
+
+                @case (1) {
+
+                  <span>
+                    ▣
+                  </span>
+
+                }
+
+                @case (2) {
+
+                  <span>
+                    ⌘
+                  </span>
+
+                }
+
+                @case (3) {
+
+                  <span>
+                    ✦
+                  </span>
+
+                }
+
+              }
+
+            </div>
+
+          </div>
+
+
+
+          <!-- CONTENT -->
+
+          <div class="service-card__content">
+
+            <h3>
+
+              {{ service.title }}
+
+            </h3>
+
+
+            <p>
+
+              {{ service.description }}
+
+            </p>
+
+          </div>
+
+
+
+          <!-- TECHNOLOGIES -->
+
+          <div class="service-card__technologies">
+
+            @for (
+              technology
+              of service.technologies;
+              track technology
+            ) {
+
+              <span>
+
+                {{ technology }}
+
+              </span>
+
+            }
+
+          </div>
+
+
+
+          <!-- DECORATIVE ARROW -->
+
+          <div
+            class="service-card__arrow"
+            aria-hidden="true"
+          >
+            ↗
+          </div>
+
+
+        </article>
+
+      }
+
+    </div>
+
 
   </div>
 

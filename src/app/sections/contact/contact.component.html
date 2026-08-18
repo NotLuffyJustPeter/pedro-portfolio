@@ -1,120 +1,231 @@
 <section
   id="contact"
   class="contact"
+  appScrollSpy="contact"
 >
+
+  <div class="contact__glow"></div>
+
+
   <div class="container">
 
-    <div class="contact__card">
 
-      <div class="contact__content">
+    <div class="contact__shell">
 
-        <span class="section-kicker">
+
+      <!-- LEFT -->
+
+      <div class="contact__intro">
+
+        <div class="contact__eyebrow">
+
+          <span>
+            05
+          </span>
+
           CONTACT
-        </span>
+
+        </div>
+
 
         <h2>
-          Let's build
-          <span>something.</span>
+
+          Have a project
+          <span>
+            in mind?
+          </span>
+
+          <br>
+
+          Let's talk.
+
         </h2>
 
+
         <p>
-          I'm open to software development opportunities,
-          collaborations and projects where I can contribute
-          across frontend, backend, mobile or full-stack development.
+
+          I'm open to opportunities involving
+          full-stack development, backend systems,
+          mobile applications and software engineering.
+
         </p>
 
-        <div class="contact__actions">
 
-          <a
-            class="contact-button contact-button--primary"
-            href="mailto:TU_CORREO"
-          >
-            Send me an email
-            <span>→</span>
-          </a>
+        <div class="contact__meta">
 
-          <a
-            class="contact-button contact-button--secondary"
-            href="https://www.linkedin.com/in/pedro-delgado-2aa458103/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn ↗
-          </a>
+          @if (profile.availability) {
 
-        </div>
+            <div class="availability">
 
-      </div>
+              <span class="availability__dot"></span>
 
-
-      <div class="contact__side">
-
-        <div class="contact-info">
-
-          <span class="contact-info__label">
-            EMAIL
-          </span>
-
-          <a href="mailto:pedrogadel@gmail.com">
-            pedrogadel&#64;gmail.com
-          </a>
-
-        </div>
-
-
-        <div class="contact-info">
-
-          <span class="contact-info__label">
-            GITHUB
-          </span>
-
-          <a
-            href="https://github.com/NotLuffyJustPeter/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github.com/NotLuffyJustPeter ↗
-          </a>
-
-        </div>
-
-
-        <div class="contact-info">
-
-          <span class="contact-info__label">
-            LINKEDIN
-          </span>
-
-          <a
-            href="linkedin.com/in/pedro-delgado-2aa458103/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Connect with me ↗
-          </a>
-
-        </div>
-
-
-        <div class="contact-info contact-info--status">
-
-          <span class="availability-dot"></span>
-
-          <div>
-            <strong>
               Available for opportunities
-            </strong>
 
-            <small>
-              Full-Stack · Backend · Mobile
-            </small>
+            </div>
+
+          }
+
+
+          <div class="location">
+
+            <span>
+              LOCATION
+            </span>
+
+            {{ profile.location }}
+
           </div>
 
         </div>
 
       </div>
 
+
+
+      <!-- RIGHT -->
+
+      <div class="contact__actions">
+
+
+        <!-- EMAIL -->
+
+        <div class="email-card">
+
+          <div class="email-card__top">
+
+            <span>
+              EMAIL
+            </span>
+
+            <span class="email-card__icon">
+              ↗
+            </span>
+
+          </div>
+
+
+          <a
+            [href]="'mailto:' + profile.email"
+            class="email-card__address"
+          >
+
+            {{ profile.email }}
+
+          </a>
+
+
+          <div class="email-card__footer">
+
+            <span>
+              Direct contact
+            </span>
+
+
+            <button
+              type="button"
+              (click)="copyEmail()"
+            >
+
+              @if (copied()) {
+
+                ✓ COPIED
+
+              } @else {
+
+                COPY EMAIL
+
+              }
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- SOCIAL LINKS -->
+
+        <div class="social-grid">
+
+
+          <a
+            [href]="profile.linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card"
+          >
+
+            <div>
+
+              <span>
+                NETWORK
+              </span>
+
+              <strong>
+                LinkedIn
+              </strong>
+
+            </div>
+
+
+            <span class="social-card__arrow">
+              ↗
+            </span>
+
+          </a>
+
+
+
+          <a
+            [href]="profile.github"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card"
+          >
+
+            <div>
+
+              <span>
+                CODE
+              </span>
+
+              <strong>
+                GitHub
+              </strong>
+
+            </div>
+
+
+            <span class="social-card__arrow">
+              ↗
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
     </div>
 
+
+    <div class="contact__bottom">
+
+      <span>
+        LET'S BUILD SOMETHING USEFUL.
+      </span>
+
+      <span>
+        {{ profile.name }} · {{ profile.role }}
+      </span>
+
+    </div>
+
+
   </div>
+
 </section>

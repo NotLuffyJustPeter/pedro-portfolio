@@ -1,83 +1,127 @@
 <header class="navbar">
 
-  <nav class="navbar__inner container">
+  <div class="container navbar__inner">
+
+
+    <!-- LOGO -->
 
     <a
-      class="brand"
-      routerLink="/"
-      aria-label="Pedro Delgado - Home"
-      (click)="closeMenu()"
+      href="/"
+      class="navbar__brand"
+      (click)="goHome($event)"
+      aria-label="Go to home"
     >
+
       PD<span>.</span>
+
     </a>
 
 
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation menu"
-      [attr.aria-expanded]="menuOpen()"
-      (click)="toggleMenu()"
+
+    <!-- DESKTOP NAVIGATION -->
+
+    <nav
+      class="navbar__links"
+      aria-label="Main navigation"
     >
+
+      @for (
+        item of navItems;
+        track item.id
+      ) {
+
+        <a
+          [href]="'#' + item.id"
+
+          (click)="
+            goToSection(
+              $event,
+              item.id
+            )
+          "
+
+          [class.active]="
+            activeSection() === item.id
+          "
+        >
+
+          {{ item.label }}
+
+        </a>
+
+      }
+
+    </nav>
+
+
+
+    <!-- MOBILE BUTTON -->
+
+    <button
+      type="button"
+      class="navbar__menu-button"
+
+      [class.open]="menuOpen()"
+
+      (click)="toggleMenu()"
+
+      aria-label="Toggle navigation menu"
+
+      [attr.aria-expanded]="menuOpen()"
+    >
+
       <span></span>
       <span></span>
+
     </button>
 
 
-    <div
-      class="nav-links"
-      [class.is-open]="menuOpen()"
-    >
-
-      <a
-        [routerLink]="['/']"
-        fragment="about"
-        (click)="closeMenu()"
-      >
-        About
-      </a>
-
-      <a
-        [routerLink]="['/']"
-        fragment="projects"
-        (click)="closeMenu()"
-      >
-        Projects
-      </a>
-
-      <a
-        [routerLink]="['/']"
-        fragment="skills"
-        (click)="closeMenu()"
-      >
-        Skills
-      </a>
-
-      <a
-        [routerLink]="['/']"
-        fragment="contact"
-        (click)="closeMenu()"
-      >
-        Contact
-      </a>
+  </div>
 
 
-      <!-- Cambia TU_USUARIO cuando preparemos tu GitHub -->
-      <a
-        class="github-link"
-        href="https://github.com/NotLuffyJustPeter/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
 
-        <span aria-hidden="true">
-          ↗
-        </span>
-      </a>
+  <!-- MOBILE MENU -->
+
+  <div
+    class="navbar__mobile"
+    [class.open]="menuOpen()"
+  >
+
+    <div class="container">
+
+      @for (
+        item of navItems;
+        track item.id
+      ) {
+
+        <a
+          [href]="'#' + item.id"
+
+          (click)="
+            goToSection(
+              $event,
+              item.id
+            )
+          "
+
+          [class.active]="
+            activeSection() === item.id
+          "
+        >
+
+          <span>
+            0{{ $index + 1 }}
+          </span>
+
+          {{ item.label }}
+
+        </a>
+
+      }
 
     </div>
 
-  </nav>
+  </div>
+
 
 </header>

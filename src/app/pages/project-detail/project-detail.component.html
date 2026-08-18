@@ -3,7 +3,9 @@
   <article class="case-study">
 
 
-    <!-- HERO -->
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
     <header class="case-hero">
 
@@ -66,38 +68,51 @@
 
           </div>
 
-
         </div>
 
 
-    <div class="case-hero__visual">
+        <!-- SHOWCASE -->
 
-      @if (currentProject.visual === 'arcana') {
-
-        <app-arcana-showcase />
-
-      }
-
-      @if (currentProject.visual === 'roma') {
-
-        <app-roma-showcase />
-
-      }
-
-      @if (currentProject.visual === 'kave') {
-
-        <app-kave-showcase />
-
-      }
-
-      @if (currentProject.visual === 'nora') {
-
-        <app-nora-showcase />
-
-      }
+        <div class="case-hero__visual">
 
 
-    </div>
+          @if (
+            currentProject.visual === 'arcana'
+          ) {
+
+            <app-arcana-showcase />
+
+          }
+
+
+          @if (
+            currentProject.visual === 'roma'
+          ) {
+
+            <app-roma-showcase />
+
+          }
+
+
+          @if (
+            currentProject.visual === 'kave'
+          ) {
+
+            <app-kave-showcase />
+
+          }
+
+
+          @if (
+            currentProject.visual === 'nora'
+          ) {
+
+            <app-nora-showcase />
+
+          }
+
+
+        </div>
 
 
       </div>
@@ -106,7 +121,9 @@
 
 
 
-    <!-- META -->
+    <!-- =========================================
+         META
+    ========================================== -->
 
     <section class="case-meta">
 
@@ -141,7 +158,9 @@
 
 
 
-    <!-- PROBLEM -->
+    <!-- =========================================
+         01 PROBLEM
+    ========================================== -->
 
     <section class="case-section">
 
@@ -151,15 +170,11 @@
         <div>
 
           <span class="section-number">
-
             01
-
           </span>
 
           <span class="section-label">
-
             THE PROBLEM
-
           </span>
 
         </div>
@@ -196,7 +211,9 @@
 
 
 
-    <!-- SOLUTION -->
+    <!-- =========================================
+         02 SOLUTION
+    ========================================== -->
 
     <section
       class="
@@ -211,15 +228,11 @@
         <div>
 
           <span class="section-number">
-
             02
-
           </span>
 
           <span class="section-label">
-
             THE SOLUTION
-
           </span>
 
         </div>
@@ -256,7 +269,9 @@
 
 
 
-    <!-- ARCHITECTURE -->
+    <!-- =========================================
+         03 ARCHITECTURE
+    ========================================== -->
 
     <section class="case-section">
 
@@ -268,15 +283,11 @@
           <div>
 
             <span class="section-number">
-
               03
-
             </span>
 
             <span class="section-label">
-
               ARCHITECTURE
-
             </span>
 
           </div>
@@ -353,7 +364,9 @@
 
 
 
-    <!-- FEATURES -->
+    <!-- =========================================
+         04 FEATURES
+    ========================================== -->
 
     <section
       class="
@@ -434,7 +447,9 @@
 
 
 
-    <!-- CHALLENGES -->
+    <!-- =========================================
+         05 CHALLENGES
+    ========================================== -->
 
     <section class="case-section">
 
@@ -510,7 +525,67 @@
 
 
 
-    <!-- LEARNINGS -->
+    <!-- =========================================
+         06 GALLERY
+    ========================================== -->
+
+    @if (
+      currentProject.gallery.length > 0
+    ) {
+
+      <section
+        class="
+          case-section
+          case-section--alternate
+        "
+      >
+
+        <div class="container">
+
+
+          <div class="section-heading">
+
+            <div>
+
+              <span class="section-number">
+                06
+              </span>
+
+              <span class="section-label">
+                PROJECT GALLERY
+              </span>
+
+            </div>
+
+
+            <h2>
+
+              The project
+              <span>
+                in action.
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          <app-project-gallery
+            [images]="currentProject.gallery"
+          />
+
+
+        </div>
+
+      </section>
+
+    }
+
+
+
+    <!-- =========================================
+         07 LEARNINGS
+    ========================================== -->
 
     <section
       class="
@@ -525,7 +600,7 @@
         <div>
 
           <span class="section-number">
-            06
+            07
           </span>
 
           <span class="section-label">
@@ -567,53 +642,67 @@
 
 
 
-    <!-- NEXT -->
+    <!-- =========================================
+         NEXT PROJECT
+    ========================================== -->
 
-  <section class="case-next">
+    <section class="case-next">
 
-    <div class="container">
+      <div class="container">
 
-      @if (currentProject.nextProject; as next) {
 
-        <span>
-          NEXT PROJECT
-        </span>
-
-        <a
-          [routerLink]="[
-            '/project',
-            next.slug
-          ]"
-        >
-          {{ next.name }}
+        @if (
+          currentProject.nextProject;
+          as next
+        ) {
 
           <span>
-            →
+            NEXT PROJECT
           </span>
-        </a>
 
-      } @else {
 
-        <span>
-          END OF SELECTED WORK
-        </span>
+          <a
+            [routerLink]="[
+              '/project',
+              next.slug
+            ]"
+          >
 
-        <a
-          routerLink="/"
-          fragment="projects"
-        >
-          Featured Projects
+            {{ next.name }}
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+        } @else {
 
           <span>
-            ↑
+            END OF SELECTED WORK
           </span>
-        </a>
 
-      }
 
-    </div>
+          <a
+            routerLink="/"
+            fragment="projects"
+          >
 
-  </section>
+            Featured Projects
+
+            <span>
+              ↑
+            </span>
+
+          </a>
+
+        }
+
+
+      </div>
+
+    </section>
+
 
   </article>
 

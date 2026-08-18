@@ -1,20 +1,4 @@
 import {
-  ArcanaShowcaseComponent
-} from '../../shared/project-showcases/arcana-showcase/arcana-showcase.component';
-
-import {
-  RomaShowcaseComponent
-} from '../../shared/project-showcases/roma-showcase/roma-showcase.component';
-
-import {
-  KaveShowcaseComponent
-} from '../../shared/project-showcases/kave-showcase/kave-showcase.component';
-
-import {
-  NoraShowcaseComponent
-} from '../../shared/project-showcases/nora-showcase/nora-showcase.component';
-
-import {
   Component,
   OnDestroy,
   inject,
@@ -38,6 +22,26 @@ import {
   CaseStudy
 } from '../../core/models/case-study.model';
 
+import {
+  ArcanaShowcaseComponent
+} from '../../shared/project-showcases/arcana-showcase/arcana-showcase.component';
+
+import {
+  RomaShowcaseComponent
+} from '../../shared/project-showcases/roma-showcase/roma-showcase.component';
+
+import {
+  KaveShowcaseComponent
+} from '../../shared/project-showcases/kave-showcase/kave-showcase.component';
+
+import {
+  NoraShowcaseComponent
+} from '../../shared/project-showcases/nora-showcase/nora-showcase.component';
+
+import {
+  ProjectGalleryComponent
+} from '../../shared/project-gallery/project-gallery.component';
+
 
 @Component({
   selector: 'app-project-detail',
@@ -50,11 +54,14 @@ import {
     RomaShowcaseComponent,
     KaveShowcaseComponent,
     NoraShowcaseComponent,
+    ProjectGalleryComponent
   ],
 
-  templateUrl: './project-detail.component.html',
+  templateUrl:
+    './project-detail.component.html',
 
-  styleUrl: './project-detail.component.scss'
+  styleUrl:
+    './project-detail.component.scss'
 })
 export class ProjectDetailComponent
   implements OnDestroy {
@@ -64,7 +71,9 @@ export class ProjectDetailComponent
 
 
   readonly project =
-    signal<CaseStudy | undefined>(undefined);
+    signal<
+      CaseStudy | undefined
+    >(undefined);
 
 
   private readonly routeSubscription:
@@ -74,22 +83,26 @@ export class ProjectDetailComponent
   constructor() {
 
     this.routeSubscription =
-      this.route.paramMap.subscribe(params => {
+      this.route.paramMap.subscribe(
+        params => {
 
-        const slug =
-          params.get('slug');
+          const slug =
+            params.get('slug');
 
 
-        const project =
-          CASE_STUDIES.find(
-            item =>
-              item.slug === slug
+          const project =
+            CASE_STUDIES.find(
+              item =>
+                item.slug === slug
+            );
+
+
+          this.project.set(
+            project
           );
 
-
-        this.project.set(project);
-
-      });
+        }
+      );
 
   }
 

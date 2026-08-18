@@ -1,6 +1,7 @@
 <section
   id="projects"
   class="projects"
+  appScrollSpy="projects"
 >
 
   <div class="container">
@@ -34,11 +35,18 @@
 
       @for (
         project of projects;
-        track project.id
+        track project.id;
+        let index = $index
       ) {
 
         <app-project-card
           [project]="project"
+
+          appReveal
+
+          [revealDelay]="
+            index * 90
+          "
         />
 
       }

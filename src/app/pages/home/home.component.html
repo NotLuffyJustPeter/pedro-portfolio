@@ -1,11 +1,29 @@
-<app-hero></app-hero>
+<app-hero />
 
-<app-about></app-about>
 
-<app-projects></app-projects>
+<app-about
+  appReveal
+/>
 
-<app-technologies></app-technologies>
 
-<app-what-i-do></app-what-i-do>
+<app-projects
+  appReveal
+  [revealDelay]="50"
+/>
 
-<app-contact></app-contact>
+
+<app-technologies
+  appReveal
+  [revealDelay]="50"
+/>
+
+
+<app-what-i-do
+  appReveal
+  [revealDelay]="50"
+/>
+
+
+<app-contact
+  appReveal
+/>

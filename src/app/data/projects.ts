@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
 
     slug: 'nora-hayes',
 
-    name: 'Nora Hayes Companion Patch',
+    name: 'Emily Limón Companion Patch',
 
     subtitle: 'Persistent NPC System for Project Zomboid',
 

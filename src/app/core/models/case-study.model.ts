@@ -3,11 +3,13 @@ export interface CaseStudyMeta {
   value: string;
 }
 
+
 export interface CaseStudyFeature {
   number: string;
   title: string;
   description: string;
 }
+
 
 export interface CaseStudyChallenge {
   number: string;
@@ -15,12 +17,22 @@ export interface CaseStudyChallenge {
   description: string;
 }
 
+
 export interface ArchitectureNode {
   label: string;
   description?: string;
 }
 
+
+export interface CaseStudyImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+
 export interface CaseStudy {
+
   slug: string;
 
   eyebrow: string;
@@ -46,6 +58,8 @@ export interface CaseStudy {
 
   challenges: CaseStudyChallenge[];
 
+  gallery: CaseStudyImage[];
+
   learnings: string[];
 
   visual:
@@ -61,4 +75,5 @@ export interface CaseStudy {
 
   github?: string;
   demo?: string;
+
 }

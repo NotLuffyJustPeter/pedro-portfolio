@@ -1,0 +1,497 @@
+@if (
+  images.length > 0
+) {
+
+  <div class="premium-gallery">
+
+
+    <!-- =========================================
+         MAIN STAGE
+    ========================================== -->
+
+    @if (
+      selectedImage;
+      as image
+    ) {
+
+      <div class="gallery-stage">
+
+
+        <!-- MAIN IMAGE -->
+
+        <button
+          type="button"
+          class="gallery-stage__image"
+
+          (click)="
+            openLightbox()
+          "
+
+          aria-label="
+            Open selected screenshot
+            in fullscreen
+          "
+        >
+
+          <img
+            [src]="image.src"
+            [alt]="image.alt"
+            decoding="async"
+          >
+
+
+          <span
+            class="gallery-stage__hover"
+            aria-hidden="true"
+          >
+
+            <span>
+              EXPAND
+            </span>
+
+            <strong>
+              View fullscreen
+            </strong>
+
+            <i>
+              ↗
+            </i>
+
+          </span>
+
+        </button>
+
+
+
+        <!-- COUNTER -->
+
+        <div class="gallery-stage__counter">
+
+          <strong>
+            {{ formattedCurrentIndex }}
+          </strong>
+
+          <span>
+            /
+          </span>
+
+          <span>
+            {{ formattedTotal }}
+          </span>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        @if (
+          images.length > 1
+        ) {
+
+          <button
+            type="button"
+            class="
+              gallery-stage__nav
+              gallery-stage__nav--previous
+            "
+
+            (click)="
+              previousImage()
+            "
+
+            aria-label="
+              Previous screenshot
+            "
+          >
+            ←
+          </button>
+
+
+          <button
+            type="button"
+            class="
+              gallery-stage__nav
+              gallery-stage__nav--next
+            "
+
+            (click)="
+              nextImage()
+            "
+
+            aria-label="
+              Next screenshot
+            "
+          >
+            →
+          </button>
+
+        }
+
+      </div>
+
+
+
+      <!-- =========================================
+           IMAGE INFORMATION
+      ========================================== -->
+
+      <div class="gallery-info">
+
+
+        <div class="gallery-info__content">
+
+          <span>
+            PROJECT VIEW
+          </span>
+
+
+          <p>
+
+            @if (
+              image.caption
+            ) {
+
+              {{ image.caption }}
+
+            } @else {
+
+              {{ image.alt }}
+
+            }
+
+          </p>
+
+        </div>
+
+
+        <button
+          type="button"
+
+          (click)="
+            openLightbox()
+          "
+        >
+
+          FULLSCREEN
+
+          <span>
+            ↗
+          </span>
+
+        </button>
+
+
+      </div>
+
+    }
+
+
+
+    <!-- =========================================
+         THUMBNAIL RAIL
+    ========================================== -->
+
+    @if (
+      images.length > 1
+    ) {
+
+      <div class="thumbnail-wrapper">
+
+
+        <div class="thumbnail-wrapper__header">
+
+          <span>
+            GALLERY
+          </span>
+
+          <span>
+            Scroll to explore →
+          </span>
+
+        </div>
+
+
+        <div
+          class="thumbnail-rail"
+          aria-label="
+            Project screenshots
+          "
+        >
+
+          @for (
+            image of images;
+            track image.src;
+            let index = $index
+          ) {
+
+            <button
+              #thumbnail
+
+              type="button"
+
+              class="thumbnail"
+
+              [class.thumbnail--active]="
+                selectedIndex() === index
+              "
+
+              [attr.aria-current]="
+                selectedIndex() === index
+                  ? 'true'
+                  : null
+              "
+
+              [attr.aria-label]="
+                'View screenshot ' +
+                (index + 1)
+              "
+
+              (click)="
+                selectImage(
+                  index,
+                  thumbnail
+                )
+              "
+            >
+
+              <div class="thumbnail__image">
+
+                <img
+                  [src]="image.src"
+                  [alt]="image.alt"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </div>
+
+
+              <span>
+
+                {{
+                  index + 1 < 10
+                    ? '0' + (index + 1)
+                    : index + 1
+                }}
+
+              </span>
+
+            </button>
+
+          }
+
+        </div>
+
+      </div>
+
+    }
+
+
+  </div>
+
+
+
+  <!-- =========================================
+       FULLSCREEN LIGHTBOX
+  ========================================== -->
+
+  @if (
+    lightboxOpen()
+  ) {
+
+    @if (
+      selectedImage;
+      as lightboxImage
+    ) {
+
+      <div
+        class="lightbox"
+
+        role="dialog"
+
+        aria-modal="true"
+
+        aria-label="
+          Project screenshot viewer
+        "
+
+        (click)="
+          closeLightbox()
+        "
+      >
+
+
+        <!-- CLOSE -->
+
+        <button
+          type="button"
+
+          class="lightbox__close"
+
+          (click)="
+            closeLightbox();
+            $event.stopPropagation()
+          "
+
+          aria-label="
+            Close fullscreen image
+          "
+        >
+
+          <span>
+            CLOSE
+          </span>
+
+          ✕
+
+        </button>
+
+
+
+        <!-- PREVIOUS -->
+
+        @if (
+          images.length > 1
+        ) {
+
+          <button
+            type="button"
+
+            class="
+              lightbox__nav
+              lightbox__nav--previous
+            "
+
+            (click)="
+              previousImage();
+              $event.stopPropagation()
+            "
+
+            aria-label="
+              Previous screenshot
+            "
+          >
+            ←
+          </button>
+
+        }
+
+
+
+        <!-- CONTENT -->
+
+        <div
+          class="lightbox__content"
+
+          (click)="
+            $event.stopPropagation()
+          "
+        >
+
+          <div class="lightbox__image">
+
+            <img
+              [src]="lightboxImage.src"
+              [alt]="lightboxImage.alt"
+            >
+
+          </div>
+
+
+          <div class="lightbox__footer">
+
+
+            <div>
+
+              <span class="lightbox__counter">
+
+                {{ formattedCurrentIndex }}
+
+                <i>
+                  /
+                </i>
+
+                {{ formattedTotal }}
+
+              </span>
+
+            </div>
+
+
+            <p>
+
+              @if (
+                lightboxImage.caption
+              ) {
+
+                {{
+                  lightboxImage.caption
+                }}
+
+              } @else {
+
+                {{
+                  lightboxImage.alt
+                }}
+
+              }
+
+            </p>
+
+
+            <span class="lightbox__hint">
+
+              ← → NAVIGATE
+
+              <i>
+                ·
+              </i>
+
+              ESC CLOSE
+
+            </span>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- NEXT -->
+
+        @if (
+          images.length > 1
+        ) {
+
+          <button
+            type="button"
+
+            class="
+              lightbox__nav
+              lightbox__nav--next
+            "
+
+            (click)="
+              nextImage();
+              $event.stopPropagation()
+            "
+
+            aria-label="
+              Next screenshot
+            "
+          >
+            →
+          </button>
+
+        }
+
+
+      </div>
+
+    }
+
+  }
+
+}

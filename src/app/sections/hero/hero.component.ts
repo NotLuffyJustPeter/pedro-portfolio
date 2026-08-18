@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {
+  PROFILE
+} from '../../data/profile';
 
 @Component({
   selector: 'app-hero',
@@ -7,5 +10,7 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
+
+  readonly profile = PROFILE;
 
 }

@@ -761,3 +761,54 @@
   }
 
 }
+
+.project-not-found {
+  min-height:
+    calc(100svh - 76px);
+
+  display: flex;
+  align-items: center;
+
+  .container {
+    text-align: center;
+  }
+
+  span {
+    color:
+      var(--color-accent-light);
+
+    font-family:
+      Consolas,
+      monospace;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.13em;
+  }
+
+  h1 {
+    margin:
+      20px
+      0
+      0;
+
+    font-size:
+      clamp(3rem, 7vw, 6rem);
+
+    letter-spacing: -0.06em;
+  }
+
+  a {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color:
+      var(--color-text-secondary);
+
+    &:hover {
+      color:
+        var(--color-text);
+    }
+  }
+}

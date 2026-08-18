@@ -6,6 +6,7 @@ import { ProjectsComponent } from '../../sections/projects/projects.component';
 import { TechnologiesComponent } from '../../sections/technologies/technologies.component';
 import { WhatIDoComponent } from '../../sections/what-i-do/what-i-do.component';
 import { ContactComponent } from '../../sections/contact/contact.component';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ import { ContactComponent } from '../../sections/contact/contact.component';
     ProjectsComponent,
     TechnologiesComponent,
     WhatIDoComponent,
-    ContactComponent
+    ContactComponent,
+    RevealDirective
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

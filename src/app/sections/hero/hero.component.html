@@ -15,22 +15,13 @@
       <div class="hero__eyebrow">
 
         <span class="hero__status-dot"></span>
-
-        FULL-STACK DEVELOPER
-
+        {{ profile.role }}
       </div>
 
 
-      <h1>
-
-        Pedro
-        <br>
-
-        <span>
-          Delgado.
-        </span>
-
-      </h1>
+    <h1>
+      {{ profile.name }}
+    </h1>
 
 
       <p class="hero__description">
@@ -58,14 +49,8 @@
         </a>
 
 
-        <a
-          class="button button--secondary"
-          href="cv/Pedro-Delgado-CV.pdf"
-          target="_blank"
-        >
-
+        <a [href]="profile.cv" target="_blank">
           Download CV
-
         </a>
 
       </div>

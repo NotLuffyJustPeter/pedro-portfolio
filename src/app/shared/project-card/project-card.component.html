@@ -1,10 +1,16 @@
 <article
+  class="project-card" [routerLink]="['/project',project().slug]"(pointermove)="moveSpotlight($event)"
   class="project-card"
   [class.project-card--arcana]="project().slug === 'arcana'"
   [class.project-card--roma]="project().slug === 'roma-app'"
   [class.project-card--kave]="project().slug === 'kave-sys'"
   [class.project-card--nora]="project().slug === 'nora-hayes'"
 >
+
+    <div
+        class="project-card__spotlight"
+        aria-hidden="true"
+      ></div>
 
   <!-- INFO -->
 
