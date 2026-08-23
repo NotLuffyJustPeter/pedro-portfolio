@@ -8,7 +8,6 @@ import {
 } from '../components/layout';
 
 import {
-  Eyebrow,
   Reveal,
   SectionHeader,
 } from '../components/ui';
@@ -18,8 +17,16 @@ import {
 } from '../data/projects';
 
 import {
+  HomeBackground,
+} from '../features/home/background/HomeBackground';
+
+import {
   Hero,
 } from '../features/home/hero/Hero';
+
+import {
+  FeaturedProject,
+} from '../features/home/projects/FeaturedProject';
 
 export function HomePage() {
   const featuredProject =
@@ -38,102 +45,74 @@ export function HomePage() {
     <main>
       <Hero />
 
-      {featuredProject && (
+      <HomeBackground>
+        {featuredProject && (
+          <FeaturedProject
+            project={
+              featuredProject
+            }
+          />
+        )}
+
         <Section divider>
           <Container>
             <Reveal>
               <SectionHeader
-                eyebrow="01 / FEATURED PROJECT"
-                title="Selected work."
-                description="A production-focused selection of projects across full-stack development, AI, mobile applications and software systems."
+                eyebrow="02 / SELECTED WORK"
+                title="More projects."
+                description="A selection of full-stack, mobile, business and systems projects built across different platforms and technical challenges."
               />
             </Reveal>
 
-            <Reveal delay={0.08}>
-              <Link
-                className="foundation-featured"
-                to={`/project/${featuredProject.slug}`}
-              >
-                <div>
-                  <Eyebrow>
-                    {featuredProject.eyebrow}
-                  </Eyebrow>
-
-                  <h2>
-                    {featuredProject.name}
-                  </h2>
-
-                  <p>
-                    {
-                      featuredProject.shortDescription
+            <div className="foundation-projects">
+              {selectedProjects.map(
+                (
+                  project,
+                  index,
+                ) => (
+                  <Reveal
+                    key={
+                      project.slug
                     }
-                  </p>
-                </div>
+                    delay={
+                      index *
+                      0.06
+                    }
+                  >
+                    <Link
+                      to={`/project/${project.slug}`}
+                      className="foundation-project"
+                    >
+                      <span>
+                        {String(
+                          index +
+                            2,
+                        ).padStart(
+                          2,
+                          '0',
+                        )}
+                      </span>
 
-                <span>
-                  {featuredProject.year} ↗
-                </span>
-              </Link>
-            </Reveal>
+                      <strong>
+                        {
+                          project.name
+                        }
+                      </strong>
+
+                      <span>
+                        {
+                          project.year
+                        }{' '}
+                        ↗
+                      </span>
+                    </Link>
+                  </Reveal>
+                ),
+              )}
+            </div>
           </Container>
         </Section>
-      )}
-
-      <Section divider>
-        <Container>
-          <Reveal>
-            <SectionHeader
-              eyebrow="02 / SELECTED WORK"
-              title="More projects."
-            />
-          </Reveal>
-
-          <div className="foundation-projects">
-            {selectedProjects.map(
-              (
-                project,
-                index,
-              ) => (
-                <Reveal
-                  key={
-                    project.slug
-                  }
-                  delay={
-                    index * 0.06
-                  }
-                >
-                  <Link
-                    to={`/project/${project.slug}`}
-                    className="foundation-project"
-                  >
-                    <span>
-                      {String(
-                        index + 2,
-                      ).padStart(
-                        2,
-                        '0',
-                      )}
-                    </span>
-
-                    <strong>
-                      {
-                        project.name
-                      }
-                    </strong>
-
-                    <span>
-                      {
-                        project.year
-                      }{' '}
-                      ↗
-                    </span>
-                  </Link>
-                </Reveal>
-              ),
-            )}
-          </div>
-        </Container>
-      </Section>
+      </HomeBackground>
     </main>
   );
 }

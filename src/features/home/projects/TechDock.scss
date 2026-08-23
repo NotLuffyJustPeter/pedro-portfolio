@@ -1,0 +1,419 @@
+.tech-dock {
+  position:
+    relative;
+
+  width:
+    fit-content;
+
+  max-width:
+    100%;
+}
+
+.tech-dock__defs {
+  position:
+    absolute;
+}
+
+.tech-dock__surface {
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  gap:
+    clamp(
+      0.45rem,
+      1vw,
+      0.7rem
+    );
+
+  padding:
+    0.7rem;
+
+  overflow-x:
+    auto;
+
+  border:
+    1px solid
+    rgb(
+      255 255 255 /
+      9%
+    );
+
+  border-radius:
+    1.15rem;
+
+  background:
+    rgb(
+      13 14 18 /
+      62%
+    );
+
+  box-shadow:
+    0 20px 60px
+      rgb(
+        0 0 0 /
+        30%
+      ),
+    inset
+      0 1px 0
+      rgb(
+        255 255 255 /
+        4%
+      );
+
+  backdrop-filter:
+    blur(
+      18px
+    );
+
+  -webkit-backdrop-filter:
+    blur(
+      18px
+    );
+
+  scrollbar-width:
+    none;
+
+  &::-webkit-scrollbar {
+    display:
+      none;
+  }
+}
+
+.tech-dock__item {
+  position:
+    relative;
+
+  flex:
+    0 0 auto;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    0.55rem;
+}
+
+.tech-dock__icon {
+  width:
+    clamp(
+      3.25rem,
+      5vw,
+      3.8rem
+    );
+
+  height:
+    clamp(
+      3.25rem,
+      5vw,
+      3.8rem
+    );
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    #e7e7ea;
+
+  background:
+    linear-gradient(
+      145deg,
+      #17181d,
+      #0d0e12
+    );
+
+  box-shadow:
+    0 12px 26px
+      rgb(
+        0 0 0 /
+        32%
+      ),
+    inset
+      0 1px 0
+      rgb(
+        255 255 255 /
+        7%
+      );
+
+  cursor:
+    default;
+
+  transform:
+    translateY(
+      0
+    )
+    scale(
+      1
+    );
+
+  transition:
+    transform
+    300ms
+    var(
+      --ease-out
+    ),
+    color
+    250ms
+    ease,
+    background
+    250ms
+    ease,
+    box-shadow
+    300ms
+    ease;
+
+  svg {
+    width:
+      52%;
+
+    height:
+      52%;
+  }
+}
+
+.tech-dock__label {
+  color:
+    var(
+      --color-text-muted
+    );
+
+  font-family:
+    var(
+      --font-mono
+    );
+
+  font-size:
+    0.58rem;
+
+  letter-spacing:
+    0.02em;
+
+  opacity:
+    0.7;
+
+  transition:
+    opacity
+    250ms
+    ease,
+    color
+    250ms
+    ease;
+}
+
+.tech-dock__item:hover {
+  .tech-dock__icon {
+    transform:
+      translateY(
+        -8px
+      )
+      scale(
+        1.1
+      );
+  }
+
+  .tech-dock__label {
+    color:
+      var(
+        --color-text
+      );
+
+    opacity:
+      1;
+  }
+}
+
+.tech-dock__icon--next {
+  &:hover {
+    color:
+      white;
+
+    box-shadow:
+      0 16px 36px
+        rgb(
+          255 255 255 /
+          9%
+        );
+  }
+}
+
+.tech-dock__icon--react {
+  &:hover {
+    color:
+      #61dafb;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgb(
+          97 218 251 /
+          14%
+        ),
+        #0d0e12
+      );
+
+    box-shadow:
+      0 16px 36px
+      rgb(
+        97 218 251 /
+        14%
+      );
+  }
+}
+
+.tech-dock__icon--nest {
+  &:hover {
+    color:
+      #e0234e;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgb(
+          224 35 78 /
+          13%
+        ),
+        #0d0e12
+      );
+
+    box-shadow:
+      0 16px 36px
+      rgb(
+        224 35 78 /
+        14%
+      );
+  }
+}
+
+.tech-dock__icon--postgres {
+  &:hover {
+    color:
+      #70a8d8;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgb(
+          51 103 145 /
+          18%
+        ),
+        #0d0e12
+      );
+
+    box-shadow:
+      0 16px 36px
+      rgb(
+        51 103 145 /
+        18%
+      );
+  }
+}
+
+.tech-dock__icon--gemini {
+  &:hover {
+    color:
+      #a995ff;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgb(
+          124 92 252 /
+          18%
+        ),
+        #0d0e12
+      );
+
+    box-shadow:
+      0 16px 36px
+      rgb(
+        124 92 252 /
+        20%
+      );
+  }
+}
+
+.tech-dock__icon--socket {
+  &:hover {
+    color:
+      white;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgb(
+          255 255 255 /
+          7%
+        ),
+        #0d0e12
+      );
+
+    box-shadow:
+      0 16px 36px
+      rgb(
+        255 255 255 /
+        8%
+      );
+  }
+}
+
+@media (
+  max-width: 600px
+) {
+  .tech-dock {
+    width:
+      100%;
+  }
+
+  .tech-dock__surface {
+    width:
+      100%;
+
+    justify-content:
+      flex-start;
+
+    padding:
+      0.65rem;
+  }
+
+  .tech-dock__icon {
+    width:
+      3.2rem;
+
+    height:
+      3.2rem;
+  }
+}
+
+@media (
+  pointer: coarse
+) {
+  .tech-dock__label {
+    opacity:
+      1;
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .tech-dock__icon,
+  .tech-dock__label {
+    transition:
+      none;
+  }
+}

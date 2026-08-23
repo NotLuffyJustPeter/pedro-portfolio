@@ -1,0 +1,138 @@
+.home-background {
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
+  overflow:
+    hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #08090b 0%,
+      #090a0e 34%,
+      #0a0910 67%,
+      #08090b 100%
+    );
+}
+
+.home-background__grid {
+  z-index:
+    -3;
+
+  opacity:
+    0.7;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2rem,
+      black 11rem,
+      black 82%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2rem,
+      black 11rem,
+      black 82%,
+      transparent 100%
+    );
+}
+
+.home-background__ambient {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    -2;
+
+  pointer-events:
+    none;
+
+  background:
+    radial-gradient(
+      circle
+        at 78%
+        14%,
+      rgb(
+        124 92 252 /
+        11%
+      ),
+      transparent
+        26%
+    ),
+    radial-gradient(
+      circle
+        at 15%
+        46%,
+      rgb(
+        56 189 248 /
+        5%
+      ),
+      transparent
+        27%
+    ),
+    radial-gradient(
+      circle
+        at 68%
+        76%,
+      rgb(
+        192 132 252 /
+        5%
+      ),
+      transparent
+        24%
+    );
+}
+
+.home-background__content {
+  position:
+    relative;
+
+  z-index:
+    1;
+}
+
+@media (
+  max-width: 768px
+) {
+  .home-background__grid {
+    opacity:
+      0.48;
+  }
+
+  .home-background__ambient {
+    background:
+      radial-gradient(
+        circle
+          at 72%
+          10%,
+        rgb(
+          124 92 252 /
+          8%
+        ),
+        transparent
+          24%
+      );
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .home-background__grid {
+    opacity:
+      0.38;
+  }
+}
