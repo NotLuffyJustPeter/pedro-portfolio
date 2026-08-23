@@ -1,0 +1,19 @@
+:root {
+  --color-bg: #08090b;
+  --color-surface: #0d0e11;
+  --color-surface-hover: #121318;
+
+  --color-text: #f5f7fa;
+  --color-text-secondary: #a1a5ae;
+  --color-text-muted: #6d717a;
+
+  --color-accent: #7c5cfc;
+
+  --color-border: rgb(255 255 255 / 8%);
+  --color-border-hover: rgb(255 255 255 / 18%);
+
+  --container: 1440px;
+
+  --space-page:
+    clamp(1.25rem, 4vw, 4rem);
+}
