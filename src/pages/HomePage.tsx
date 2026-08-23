@@ -17,6 +17,10 @@ import {
   PROJECTS,
 } from '../data/projects';
 
+import {
+  Hero,
+} from '../features/home/hero/Hero';
+
 export function HomePage() {
   const featuredProject =
     PROJECTS.find(
@@ -32,26 +36,7 @@ export function HomePage() {
 
   return (
     <main>
-      <section className="foundation-hero">
-        <Container>
-          <Reveal>
-            <Eyebrow>
-              FULL-STACK DEVELOPER
-            </Eyebrow>
-
-            <h1 className="display">
-              Pedro
-              <br />
-              Delgado
-            </h1>
-
-            <p className="body-large">
-              Building web, mobile and
-              intelligent digital products.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
+      <Hero />
 
       {featuredProject && (
         <Section divider>

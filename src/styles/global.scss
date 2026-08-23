@@ -32,34 +32,6 @@ body {
     clamp(3rem, 8vw, 8rem);
 }
 
-.foundation-hero {
-  min-height:
-    100svh;
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  .display {
-    margin-top:
-      clamp(1.25rem, 3vw, 2.5rem);
-  }
-
-  p {
-    max-width:
-      580px;
-
-    margin:
-      clamp(1.5rem, 3vw, 2.5rem)
-      0
-      0;
-
-    color:
-      var(--color-text-secondary);
-  }
-}
 
 .foundation-eyebrow {
   color:

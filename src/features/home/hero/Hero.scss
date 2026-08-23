@@ -1,0 +1,415 @@
+.hero {
+  position:
+    relative;
+
+  min-height:
+    100svh;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  overflow:
+    hidden;
+
+  isolation:
+    isolate;
+
+  padding-top:
+    clamp(
+      6.5rem,
+      10vw,
+      8.5rem
+    );
+
+  padding-bottom:
+    clamp(
+      4rem,
+      7vw,
+      6rem
+    );
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+.hero__veil {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgb(8 9 11 / 66%)
+        0%,
+      rgb(8 9 11 / 36%)
+        45%,
+      rgb(8 9 11 / 52%)
+        100%
+    );
+
+  pointer-events:
+    none;
+}
+
+.hero__container {
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.15fr
+    )
+    minmax(
+      340px,
+      0.85fr
+    );
+
+  align-items:
+    center;
+
+  gap:
+    clamp(
+      3rem,
+      7vw,
+      8rem
+    );
+}
+
+.hero__content {
+  min-width:
+    0;
+}
+
+.hero__title {
+  margin:
+    clamp(
+      1.2rem,
+      2vw,
+      1.8rem
+    )
+    0
+    0;
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    clamp(
+      4.5rem,
+      10vw,
+      10rem
+    );
+
+  font-weight:
+    500;
+
+  line-height:
+    0.82;
+
+  letter-spacing:
+    -0.075em;
+}
+
+.hero__description {
+  max-width:
+    590px;
+
+  margin:
+    clamp(
+      1.8rem,
+      4vw,
+      3rem
+    )
+    0
+    0;
+
+  color:
+    var(
+      --color-text-secondary
+    );
+}
+
+.hero__actions {
+  margin-top:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  align-items:
+    center;
+
+  gap:
+    1rem;
+}
+
+.hero__primary-link,
+.hero__secondary-link {
+  min-height:
+    48px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    0.75rem;
+
+  padding-inline:
+    1.25rem;
+
+  border-radius:
+    var(--radius-sm);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.72rem;
+
+  letter-spacing:
+    0.04em;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    transform
+    var(--duration-fast)
+    var(--ease-out),
+    border-color
+    var(--duration-fast)
+    ease,
+    background-color
+    var(--duration-fast)
+    ease;
+}
+
+.hero__primary-link {
+  background:
+    var(--color-text);
+
+  color:
+    var(--color-bg);
+
+  &:hover {
+    transform:
+      translateY(-2px);
+  }
+}
+
+.hero__secondary-link {
+  border:
+    1px solid
+    var(--color-border-strong);
+
+  color:
+    var(
+      --color-text-secondary
+    );
+
+  &:hover {
+    border-color:
+      var(--color-border-hover);
+
+    color:
+      var(--color-text);
+
+    transform:
+      translateY(-2px);
+  }
+}
+
+.hero__terminal {
+  display:
+    flex;
+
+  justify-content:
+    flex-end;
+
+  padding:
+    2.5rem;
+}
+
+.hero__scroll {
+  position:
+    absolute;
+
+  right:
+    var(--page-padding);
+
+  bottom:
+    1.5rem;
+
+  z-index:
+    1;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.75rem;
+
+  color:
+    var(
+      --color-text-muted
+    );
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.62rem;
+
+  letter-spacing:
+    0.15em;
+}
+
+.hero__scroll-line {
+  width:
+    52px;
+
+  height:
+    1px;
+
+  background:
+    var(
+      --color-border-strong
+    );
+}
+
+@media (
+  max-width: 1050px
+) {
+  .hero__container {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      4rem;
+  }
+
+  .hero__content {
+    max-width:
+      850px;
+  }
+
+.hero__terminal {
+  display:
+    flex;
+
+  justify-content:
+    flex-end;
+
+  padding:
+    2.5rem;
+}
+
+  .hero__title {
+    font-size:
+      clamp(
+        4.5rem,
+        15vw,
+        8rem
+      );
+  }
+}
+
+@media (
+  max-width: 600px
+) {
+  .hero {
+    align-items:
+      flex-start;
+
+    padding-top:
+      8rem;
+
+    padding-bottom:
+      5rem;
+  }
+
+  .hero__container {
+    gap:
+      3rem;
+  }
+
+  .hero__title {
+    font-size:
+      clamp(
+        4rem,
+        19vw,
+        6.25rem
+      );
+  }
+
+  .hero__description {
+    font-size:
+      1rem;
+  }
+
+  .hero__actions {
+    align-items:
+      stretch;
+  }
+
+  .hero__primary-link,
+  .hero__secondary-link {
+    flex:
+      1 1 100%;
+  }
+
+  .hero__terminal {
+    width:
+      100%;
+
+    padding:
+      1rem 0.35rem;
+  }
+
+  .hero__scroll {
+    display:
+      none;
+  }
+
+  .hero__veil {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(8 9 11 / 44%),
+        rgb(8 9 11 / 70%)
+      );
+  }
+}
