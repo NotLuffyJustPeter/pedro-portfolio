@@ -80,7 +80,7 @@ export function PortfolioNav() {
             'View selected projects',
 
           href:
-            '/#projects',
+            '/#selected-work',
         },
       ],
     },

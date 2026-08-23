@@ -1,18 +1,4 @@
 import {
-  Link,
-} from 'react-router-dom';
-
-import {
-  Container,
-  Section,
-} from '../components/layout';
-
-import {
-  Reveal,
-  SectionHeader,
-} from '../components/ui';
-
-import {
   PROJECTS,
 } from '../data/projects';
 
@@ -27,6 +13,10 @@ import {
 import {
   FeaturedProject,
 } from '../features/home/projects/FeaturedProject';
+
+import {
+  SelectedWork,
+} from '../features/home/projects/SelectedWork';
 
 export function HomePage() {
   const featuredProject =
@@ -54,64 +44,11 @@ export function HomePage() {
           />
         )}
 
-        <Section divider>
-          <Container>
-            <Reveal>
-              <SectionHeader
-                eyebrow="02 / SELECTED WORK"
-                title="More projects."
-                description="A selection of full-stack, mobile, business and systems projects built across different platforms and technical challenges."
-              />
-            </Reveal>
-
-            <div className="foundation-projects">
-              {selectedProjects.map(
-                (
-                  project,
-                  index,
-                ) => (
-                  <Reveal
-                    key={
-                      project.slug
-                    }
-                    delay={
-                      index *
-                      0.06
-                    }
-                  >
-                    <Link
-                      to={`/project/${project.slug}`}
-                      className="foundation-project"
-                    >
-                      <span>
-                        {String(
-                          index +
-                            2,
-                        ).padStart(
-                          2,
-                          '0',
-                        )}
-                      </span>
-
-                      <strong>
-                        {
-                          project.name
-                        }
-                      </strong>
-
-                      <span>
-                        {
-                          project.year
-                        }{' '}
-                        ↗
-                      </span>
-                    </Link>
-                  </Reveal>
-                ),
-              )}
-            </div>
-          </Container>
-        </Section>
+        <SelectedWork
+          projects={
+            selectedProjects
+          }
+        />
       </HomeBackground>
     </main>
   );

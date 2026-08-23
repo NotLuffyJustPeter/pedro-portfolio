@@ -400,20 +400,11 @@
 }
 
 .featured-project__image-link {
-  position:
-    relative;
-
-  display:
-    block;
-
   aspect-ratio:
     16 / 9;
 
-  overflow:
-    hidden;
-
   background:
-    #0d0e11;
+    #050b10;
 }
 
 .featured-project__image {
@@ -424,52 +415,25 @@
     100%;
 
   object-fit:
-    cover;
+    contain;
 
   object-position:
     top center;
-
-  transform:
-    scale(1.001);
-
-  transition:
-    transform
-      900ms
-      var(--ease-out),
-    filter
-      600ms
-      ease;
 }
 
 .featured-project__image-overlay {
-  position:
-    absolute;
-
-  inset:
-    0;
-
   background:
     linear-gradient(
       180deg,
       rgb(
         8 9 11 /
-        10%
-      )
-        25%,
+        3%
+      ),
       rgb(
         8 9 11 /
-        42%
+        18%
       )
-        100%
     );
-
-  transition:
-    opacity
-    500ms
-    ease;
-
-  pointer-events:
-    none;
 }
 
 .featured-project__image-top,
@@ -640,8 +604,8 @@
 
 .featured-project__description,
 .featured-project__stack {
-  display:
-    flex;
+  width:
+    100%;
 
   flex-direction:
     column;
@@ -683,8 +647,8 @@
 }
 
 .featured-project__stack-wrapper {
-  min-width:
-    0;
+  width:
+    100%;
 }
 
 /* =========================
@@ -1205,8 +1169,8 @@
   }
 
   .featured-project__stack-wrapper {
-    max-width:
-      700px;
+    width:
+    100%;
   }
 }
 

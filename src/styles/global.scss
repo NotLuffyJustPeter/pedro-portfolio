@@ -56,42 +56,6 @@ body {
 }
 
 
-.foundation-projects {
-  margin-top:
-    2rem;
-}
-
-.foundation-project {
-  display: grid;
-
-  grid-template-columns:
-    60px 1fr auto;
-
-  gap: 1rem;
-
-  padding:
-    1.5rem 0;
-
-  border-top:
-    1px solid var(--color-border);
-
-  transition:
-    padding 180ms ease,
-    color 180ms ease;
-
-  strong {
-    font-size:
-      clamp(1.25rem, 3vw, 2.5rem);
-  }
-
-  &:hover {
-    padding-inline:
-      0.75rem;
-
-    color:
-      var(--color-accent);
-  }
-}
 
 .foundation-back {
   display:

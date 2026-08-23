@@ -185,7 +185,11 @@ export function FeaturedProject({
                 CORE STACK
               </Eyebrow>
 
-              <TechDock />
+              <TechDock
+                projectSlug={
+                  project.slug
+                }
+              />
             </div>
           </Reveal>
         </div>
