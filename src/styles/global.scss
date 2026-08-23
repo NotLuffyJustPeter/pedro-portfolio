@@ -261,3 +261,17 @@ body {
     }
   }
 }
+
+[id] {
+  scroll-margin-top:
+    7rem;
+}
+
+.project-foundation {
+  padding-top:
+    clamp(
+      7.5rem,
+      10vw,
+      10rem
+    );
+}
