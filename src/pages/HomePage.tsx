@@ -3,12 +3,20 @@ import {
 } from '../data/projects';
 
 import {
+  Footer,
+} from '../components/layout/Footer';
+
+import {
   About,
 } from '../features/home/about/About';
 
 import {
   HomeBackground,
 } from '../features/home/background/HomeBackground';
+
+import {
+  Contact,
+} from '../features/home/contact/Contact';
 
 import {
   Hero,
@@ -21,6 +29,14 @@ import {
 import {
   SelectedWork,
 } from '../features/home/projects/SelectedWork';
+
+import {
+  WhatIDo,
+} from '../features/home/services/WhatIDo';
+
+import {
+  TechStack,
+} from '../features/home/stack/TechStack';
 
 export function HomePage() {
   const featuredProject =
@@ -36,7 +52,7 @@ export function HomePage() {
     );
 
   return (
-    <main>
+    <main id="top">
       <Hero />
 
       <HomeBackground>
@@ -56,6 +72,14 @@ export function HomePage() {
       </HomeBackground>
 
       <About />
+
+      <WhatIDo />
+
+      <TechStack />
+
+      <Contact />
+
+      <Footer />
     </main>
   );
 }

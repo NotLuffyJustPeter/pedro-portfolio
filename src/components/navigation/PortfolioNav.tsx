@@ -140,7 +140,7 @@ export function PortfolioNav() {
 
   return (
     <CardNav
-      logo={`${baseUrl}favicon.svg`}
+      logo="/brand/pd-logo.svg"
       logoAlt="Pedro Delgado"
       items={items}
       baseColor="rgba(14, 15, 19, 0.9)"

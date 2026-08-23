@@ -35,7 +35,10 @@ import {
 
 import {
   FiCode,
+  FiCpu,
   FiDatabase,
+  FiMessageSquare,
+  FiRepeat,
   FiUsers,
 } from 'react-icons/fi';
 
@@ -46,10 +49,6 @@ interface TechDockItem {
 
   icon: IconType;
 
-  /**
-   * RGB triplet so SCSS can use:
-   * rgb(var(--tech-color) / opacity)
-   */
   color: string;
 }
 
@@ -70,37 +69,36 @@ const STACKS: Record<
   string,
   TechDockItem[]
 > = {
+  /* =========================
+     MERIDIAN
+  ========================= */
+
   meridian: [
     {
       name: 'Next.js',
       icon: SiNextdotjs,
       color: '255 255 255',
     },
-
     {
       name: 'React',
       icon: SiReact,
       color: '97 218 251',
     },
-
     {
       name: 'NestJS',
       icon: SiNestjs,
       color: '224 35 78',
     },
-
     {
       name: 'PostgreSQL',
       icon: SiPostgresql,
       color: '65 115 148',
     },
-
     {
       name: 'Gemini',
       icon: SiGooglegemini,
       color: '139 125 255',
     },
-
     {
       name: 'Socket.IO',
       icon: SiSocketdotio,
@@ -108,37 +106,36 @@ const STACKS: Record<
     },
   ],
 
+  /* =========================
+     PROJECTS
+  ========================= */
+
   arcana: [
     {
       name: 'Angular',
       icon: SiAngular,
       color: '221 0 49',
     },
-
     {
       name: 'TypeScript',
       icon: SiTypescript,
       color: '49 120 198',
     },
-
     {
       name: 'Node.js',
       icon: SiNodedotjs,
       color: '95 160 78',
     },
-
     {
       name: 'Supabase',
       icon: SiSupabase,
       color: '62 207 142',
     },
-
     {
       name: 'PostgreSQL',
       icon: SiPostgresql,
       color: '65 115 148',
     },
-
     {
       name: 'Gemini',
       icon: SiGooglegemini,
@@ -152,25 +149,21 @@ const STACKS: Record<
       icon: SiFlutter,
       color: '84 197 248',
     },
-
     {
       name: 'Dart',
       icon: SiDart,
       color: '1 169 219',
     },
-
     {
       name: 'Node.js',
       icon: SiNodedotjs,
       color: '95 160 78',
     },
-
     {
       name: 'Express',
       icon: SiExpress,
       color: '255 255 255',
     },
-
     {
       name: 'MySQL',
       icon: SiMysql,
@@ -184,25 +177,21 @@ const STACKS: Record<
       icon: SiAngular,
       color: '221 0 49',
     },
-
     {
       name: 'TypeScript',
       icon: SiTypescript,
       color: '49 120 198',
     },
-
     {
       name: 'Node.js',
       icon: SiNodedotjs,
       color: '95 160 78',
     },
-
     {
       name: 'MySQL',
       icon: SiMysql,
       color: '68 121 161',
     },
-
     {
       name: 'Firebase',
       icon: SiFirebase,
@@ -216,29 +205,131 @@ const STACKS: Record<
       icon: SiLua,
       color: '112 112 255',
     },
-
     {
       name: 'Project Zomboid',
       icon: FaGamepad,
       color: '163 230 53',
     },
-
     {
       name: 'Persistence',
       icon: FiDatabase,
       color: '148 163 184',
     },
-
     {
       name: 'Multiplayer',
       icon: FiUsers,
       color: '56 189 248',
     },
-
     {
       name: 'Game Modding',
       icon: FiCode,
       color: '244 114 182',
+    },
+  ],
+
+  /* =========================
+     WHAT I DO
+  ========================= */
+
+  'service-fullstack': [
+    {
+      name: 'React',
+      icon: SiReact,
+      color: '97 218 251',
+    },
+    {
+      name: 'Next.js',
+      icon: SiNextdotjs,
+      color: '255 255 255',
+    },
+    {
+      name: 'Angular',
+      icon: SiAngular,
+      color: '221 0 49',
+    },
+    {
+      name: 'TypeScript',
+      icon: SiTypescript,
+      color: '49 120 198',
+    },
+    {
+      name: 'Node.js',
+      icon: SiNodedotjs,
+      color: '95 160 78',
+    },
+  ],
+
+  'service-mobile': [
+    {
+      name: 'Flutter',
+      icon: SiFlutter,
+      color: '84 197 248',
+    },
+    {
+      name: 'Dart',
+      icon: SiDart,
+      color: '1 169 219',
+    },
+    {
+      name: 'React',
+      icon: SiReact,
+      color: '97 218 251',
+    },
+    {
+      name: 'REST API',
+      icon: FiRepeat,
+      color: '56 189 248',
+    },
+  ],
+
+  'service-backend': [
+    {
+      name: 'Node.js',
+      icon: SiNodedotjs,
+      color: '95 160 78',
+    },
+    {
+      name: 'NestJS',
+      icon: SiNestjs,
+      color: '224 35 78',
+    },
+    {
+      name: 'Express',
+      icon: SiExpress,
+      color: '255 255 255',
+    },
+    {
+      name: 'PostgreSQL',
+      icon: SiPostgresql,
+      color: '65 115 148',
+    },
+    {
+      name: 'MySQL',
+      icon: SiMysql,
+      color: '68 121 161',
+    },
+  ],
+
+  'service-ai': [
+    {
+      name: 'Gemini',
+      icon: SiGooglegemini,
+      color: '139 125 255',
+    },
+    {
+      name: 'Prompt Design',
+      icon: FiMessageSquare,
+      color: '192 132 252',
+    },
+    {
+      name: 'AI Workflows',
+      icon: FiCpu,
+      color: '167 139 250',
+    },
+    {
+      name: 'APIs',
+      icon: FiCode,
+      color: '56 189 248',
     },
   ],
 };
@@ -307,7 +398,8 @@ export function TechDock({
               icon: Icon,
               color,
             }) => {
-              const style: TechStyle = {
+              const style:
+                TechStyle = {
                 '--tech-color':
                   color,
               };

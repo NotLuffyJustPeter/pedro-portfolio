@@ -201,6 +201,17 @@
     contain;
 }
 
+.card-nav-logo {
+  width: 64px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
 .card-nav-cta-button {
   height:
     100%;
@@ -501,6 +512,12 @@
   .hamburger-menu {
     order:
       2;
+  }
+
+  @media (max-width: 700px) {
+    .card-nav-logo {
+      width: 56px;
+    }
   }
 
   .logo-container {

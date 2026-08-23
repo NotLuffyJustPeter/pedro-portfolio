@@ -38,12 +38,24 @@
     var(--color-border);
 
   .eyebrow {
+    color:
+      var(--color-text-secondary);
+
+    font-family:
+      var(--font-mono);
+
     font-size:
       clamp(
-        0.76rem,
+        0.78rem,
         0.9vw,
-        0.88rem
+        0.9rem
       );
+
+    font-weight:
+      500;
+
+    letter-spacing:
+      0.14em;
   }
 
   > span {
@@ -54,10 +66,17 @@
       var(--font-mono);
 
     font-size:
-      0.58rem;
+      clamp(
+        0.68rem,
+        0.78vw,
+        0.78rem
+      );
+
+    font-weight:
+      500;
 
     letter-spacing:
-      0.1em;
+      0.12em;
   }
 }
 
