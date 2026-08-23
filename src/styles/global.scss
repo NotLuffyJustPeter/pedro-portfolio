@@ -1,5 +1,6 @@
 @use './tokens';
 @use './reset';
+@use './typography';
 
 body {
   min-width: 320px;
@@ -7,6 +8,35 @@ body {
 
 .app-shell {
   min-height: 100vh;
+}
+
+.app-shell {
+  min-height:
+    100vh;
+
+  overflow:
+    clip;
+}
+
+.page-container {
+  width:
+    min(
+      calc(100% - (var(--page-padding) * 2)),
+      var(--container)
+    );
+
+  margin-inline:
+    auto;
+}
+
+.section {
+  padding-block:
+    var(--section-space);
+}
+
+.section-divider {
+  border-top:
+    1px solid var(--color-border);
 }
 
 .foundation-page {
