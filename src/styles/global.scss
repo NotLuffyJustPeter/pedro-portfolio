@@ -1,6 +1,7 @@
 @use './tokens';
 @use './reset';
 @use './typography';
+@use './layout';
 
 body {
   min-width: 320px;
@@ -18,26 +19,6 @@ body {
     clip;
 }
 
-.page-container {
-  width:
-    min(
-      calc(100% - (var(--page-padding) * 2)),
-      var(--container)
-    );
-
-  margin-inline:
-    auto;
-}
-
-.section {
-  padding-block:
-    var(--section-space);
-}
-
-.section-divider {
-  border-top:
-    1px solid var(--color-border);
-}
 
 .foundation-page {
   width: min(
@@ -52,37 +33,31 @@ body {
 }
 
 .foundation-hero {
-  min-height: 60vh;
+  min-height:
+    100svh;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display:
+    flex;
 
-  border-bottom:
-    1px solid var(--color-border);
+  align-items:
+    center;
 
-  h1 {
-    margin:
-      1rem 0 0;
-
-    font-size:
-      clamp(3.5rem, 10vw, 9rem);
-
-    line-height: 0.9;
-
-    letter-spacing:
-      -0.07em;
+  .display {
+    margin-top:
+      clamp(1.25rem, 3vw, 2.5rem);
   }
 
   p {
-    margin-top:
-      1.5rem;
+    max-width:
+      580px;
+
+    margin:
+      clamp(1.5rem, 3vw, 2.5rem)
+      0
+      0;
 
     color:
       var(--color-text-secondary);
-
-    font-size:
-      clamp(1rem, 2vw, 1.3rem);
   }
 }
 

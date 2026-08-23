@@ -1,89 +1,154 @@
-import { Link } from 'react-router-dom';
-import { PROJECTS } from '../data/projects';
+import {
+  Link,
+} from 'react-router-dom';
+
+import {
+  Container,
+  Section,
+} from '../components/layout';
+
+import {
+  Eyebrow,
+  Reveal,
+  SectionHeader,
+} from '../components/ui';
+
+import {
+  PROJECTS,
+} from '../data/projects';
 
 export function HomePage() {
   const featuredProject =
-  PROJECTS.find(
-    (project) =>
-      project.featured,
-  );
+    PROJECTS.find(
+      (project) =>
+        project.featured,
+    );
 
-const selectedProjects =
-  PROJECTS.filter(
-    (project) =>
-      !project.featured,
-  );
+  const selectedProjects =
+    PROJECTS.filter(
+      (project) =>
+        !project.featured,
+    );
 
   return (
-    <main className="foundation-page">
+    <main>
       <section className="foundation-hero">
-        <span className="foundation-eyebrow">
-          REACT PORTFOLIO / FOUNDATION
-        </span>
+        <Container>
+          <Reveal>
+            <Eyebrow>
+              FULL-STACK DEVELOPER
+            </Eyebrow>
 
-        <h1>
-          Pedro Delgado
-        </h1>
+            <h1 className="display">
+              Pedro
+              <br />
+              Delgado
+            </h1>
 
-        <p>
-          Full-Stack Developer
-        </p>
+            <p className="body-large">
+              Building web, mobile and
+              intelligent digital products.
+            </p>
+          </Reveal>
+        </Container>
       </section>
 
       {featuredProject && (
-        <section className="foundation-section">
-          <span className="foundation-eyebrow">
-            01 / FEATURED PROJECT
-          </span>
+        <Section divider>
+          <Container>
+            <Reveal>
+              <SectionHeader
+                eyebrow="01 / FEATURED PROJECT"
+                title="Selected work."
+                description="A production-focused selection of projects across full-stack development, AI, mobile applications and software systems."
+              />
+            </Reveal>
 
-          <Link
-            className="foundation-featured"
-            to={`/project/${featuredProject.slug}`}
-          >
-            <div>
-              <span>
-                {featuredProject.eyebrow}
-              </span>
+            <Reveal delay={0.08}>
+              <Link
+                className="foundation-featured"
+                to={`/project/${featuredProject.slug}`}
+              >
+                <div>
+                  <Eyebrow>
+                    {featuredProject.eyebrow}
+                  </Eyebrow>
 
-              <h2>
-                {featuredProject.name}
-              </h2>
-            </div>
+                  <h2>
+                    {featuredProject.name}
+                  </h2>
 
-            <span>
-              {featuredProject.year} ↗
-            </span>
-          </Link>
-        </section>
+                  <p>
+                    {
+                      featuredProject.shortDescription
+                    }
+                  </p>
+                </div>
+
+                <span>
+                  {featuredProject.year} ↗
+                </span>
+              </Link>
+            </Reveal>
+          </Container>
+        </Section>
       )}
 
-      <section className="foundation-section">
-        <span className="foundation-eyebrow">
-          SELECTED WORK
-        </span>
+      <Section divider>
+        <Container>
+          <Reveal>
+            <SectionHeader
+              eyebrow="02 / SELECTED WORK"
+              title="More projects."
+            />
+          </Reveal>
 
-        <div className="foundation-projects">
-          {selectedProjects.map((project, index) => (
-            <Link
-              key={project.slug}
-              to={`/project/${project.slug}`}
-              className="foundation-project"
-            >
-              <span>
-                {String(index + 2).padStart(2, '0')}
-              </span>
+          <div className="foundation-projects">
+            {selectedProjects.map(
+              (
+                project,
+                index,
+              ) => (
+                <Reveal
+                  key={
+                    project.slug
+                  }
+                  delay={
+                    index * 0.06
+                  }
+                >
+                  <Link
+                    to={`/project/${project.slug}`}
+                    className="foundation-project"
+                  >
+                    <span>
+                      {String(
+                        index + 2,
+                      ).padStart(
+                        2,
+                        '0',
+                      )}
+                    </span>
 
-              <strong>
-                {project.name}
-              </strong>
+                    <strong>
+                      {
+                        project.name
+                      }
+                    </strong>
 
-              <span>
-                {project.year} ↗
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
+                    <span>
+                      {
+                        project.year
+                      }{' '}
+                      ↗
+                    </span>
+                  </Link>
+                </Reveal>
+              ),
+            )}
+          </div>
+        </Container>
+      </Section>
     </main>
   );
 }
