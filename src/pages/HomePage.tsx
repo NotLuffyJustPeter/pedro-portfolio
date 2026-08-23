@@ -3,6 +3,10 @@ import {
 } from '../data/projects';
 
 import {
+  About,
+} from '../features/home/about/About';
+
+import {
   HomeBackground,
 } from '../features/home/background/HomeBackground';
 
@@ -50,6 +54,8 @@ export function HomePage() {
           }
         />
       </HomeBackground>
+
+      <About />
     </main>
   );
 }

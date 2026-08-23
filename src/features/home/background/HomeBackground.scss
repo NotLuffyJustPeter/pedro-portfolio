@@ -9,42 +9,122 @@
     hidden;
 
   background:
-    linear-gradient(
-      180deg,
-      #08090b 0%,
-      #090a0e 34%,
-      #0a0910 67%,
-      #08090b 100%
-    );
+    #08090b;
+
+  /*
+   * Static dot pattern.
+   * Same visual family as the old DotGrid,
+   * but zero JavaScript / canvas work.
+   */
+  &::before {
+    content:
+      '';
+
+    position:
+      absolute;
+
+    inset:
+      0;
+
+    z-index:
+      -2;
+
+    background-image:
+      radial-gradient(
+        circle,
+        rgb(
+          255 255 255 /
+          8%
+        )
+        1px,
+        transparent
+        1.2px
+      );
+
+    background-size:
+      24px
+      24px;
+
+    /*
+     * Gradually fades the dots
+     * toward the sides.
+     */
+    mask-image:
+      linear-gradient(
+        to bottom,
+        transparent
+          0%,
+        black
+          4%,
+        black
+          92%,
+        transparent
+          100%
+      );
+
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        transparent
+          0%,
+        black
+          4%,
+        black
+          92%,
+        transparent
+          100%
+      );
+
+    opacity:
+      0.72;
+
+    pointer-events:
+      none;
+  }
+
+  /*
+   * Subtle dark layer so the dots
+   * never fight with project content.
+   */
+  &::after {
+    content:
+      '';
+
+    position:
+      absolute;
+
+    inset:
+      0;
+
+    z-index:
+      -1;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgb(
+          8 9 11 /
+          10%
+        ),
+        rgb(
+          8 9 11 /
+          28%
+        )
+          50%,
+        rgb(
+          8 9 11 /
+          45%
+        )
+      );
+
+    pointer-events:
+      none;
+  }
 }
 
-.home-background__grid {
-  z-index:
-    -3;
-
-  opacity:
-    0.7;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 2rem,
-      black 11rem,
-      black 82%,
-      transparent 100%
-    );
-
-  -webkit-mask-image:
-    linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 2rem,
-      black 11rem,
-      black 82%,
-      transparent 100%
-    );
-}
+/* =========================
+   AMBIENT LIGHT
+========================= */
 
 .home-background__ambient {
   position:
@@ -54,46 +134,112 @@
     0;
 
   z-index:
-    -2;
+    -1;
+
+  overflow:
+    hidden;
 
   pointer-events:
     none;
 
-  background:
-    radial-gradient(
-      circle
-        at 78%
-        14%,
-      rgb(
-        124 92 252 /
-        11%
-      ),
-      transparent
-        26%
-    ),
-    radial-gradient(
-      circle
-        at 15%
-        46%,
-      rgb(
-        56 189 248 /
-        5%
-      ),
-      transparent
-        27%
-    ),
-    radial-gradient(
-      circle
-        at 68%
-        76%,
-      rgb(
-        192 132 252 /
-        5%
-      ),
-      transparent
-        24%
-    );
+  &::before {
+    content:
+      '';
+
+    position:
+      absolute;
+
+    width:
+      min(
+        900px,
+        75vw
+      );
+
+    aspect-ratio:
+      1;
+
+    top:
+      4%;
+
+    left:
+      -20%;
+
+    border-radius:
+      50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgb(
+          124 92 252 /
+          10%
+        ),
+        rgb(
+          124 92 252 /
+          3%
+        )
+          40%,
+        transparent
+          70%
+      );
+
+    filter:
+      blur(
+        20px
+      );
+  }
+
+  &::after {
+    content:
+      '';
+
+    position:
+      absolute;
+
+    width:
+      min(
+        850px,
+        70vw
+      );
+
+    aspect-ratio:
+      1;
+
+    top:
+      48%;
+
+    right:
+      -25%;
+
+    border-radius:
+      50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgb(
+          56 189 248 /
+          5%
+        ),
+        rgb(
+          124 92 252 /
+          3%
+        )
+          38%,
+        transparent
+          70%
+      );
+
+    filter:
+      blur(
+        28px
+      );
+  }
 }
+
+/* =========================
+   CONTENT
+========================= */
 
 .home-background__content {
   position:
@@ -103,36 +249,39 @@
     1;
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (
-  max-width: 768px
+  max-width: 700px
 ) {
-  .home-background__grid {
-    opacity:
-      0.48;
+  .home-background {
+    &::before {
+      background-size:
+        22px
+        22px;
+
+      opacity:
+        0.6;
+    }
   }
 
   .home-background__ambient {
-    background:
-      radial-gradient(
-        circle
-          at 72%
-          10%,
-        rgb(
-          124 92 252 /
-          8%
-        ),
-        transparent
-          24%
-      );
-  }
-}
+    &::before {
+      width:
+        130vw;
 
-@media (
-  prefers-reduced-motion:
-  reduce
-) {
-  .home-background__grid {
-    opacity:
-      0.38;
+      left:
+        -70%;
+    }
+
+    &::after {
+      width:
+        120vw;
+
+      right:
+        -70%;
+    }
   }
 }

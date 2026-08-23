@@ -9,10 +9,6 @@
     1px solid
     var(--color-border);
 
-  /*
-   * Transparent so HomeBackground
-   * DotGrid remains visible.
-   */
   background:
     transparent;
 }
@@ -187,7 +183,7 @@
       var(
         --project-accent
       ) /
-      14%
+      18%
     );
 
   border-radius:
@@ -198,71 +194,70 @@
     );
 
   /*
-   * Mostly opaque card,
-   * DotGrid remains visible around it.
+   * Pure CSS background.
+   * No backdrop filter.
+   * No blurred compositing layer.
    */
   background:
+    radial-gradient(
+      circle
+      at 88% 5%,
+      rgb(
+        var(
+          --project-accent
+        ) /
+        7%
+      ),
+      transparent
+      38%
+    ),
     linear-gradient(
       135deg,
       rgb(
         var(
           --project-accent
         ) /
-        10%
+        7%
       ),
-      rgb(
-        11 12 16 /
-        94%
-      )
+      #0c0d11
         42%,
       rgb(
         var(
           --project-accent-2
         ) /
-        5%
+        3%
       )
-        100%
     );
 
+  /*
+   * Small static shadow only.
+   */
   box-shadow:
     0
-      24px
-      70px
+      14px
+      34px
       rgb(
         0 0 0 /
-        20%
-      ),
-    inset
-      0
-      1px
-      0
-      rgb(
-        255 255 255 /
-        4%
+        12%
       );
-
-  backdrop-filter:
-    blur(
-      12px
-    );
-
-  -webkit-backdrop-filter:
-    blur(
-      12px
-    );
-
-  isolation:
-    isolate;
 
   transition:
     border-color
-      350ms
+      180ms
       ease,
-    box-shadow
-      450ms
-      var(--ease-out);
+    background-color
+      180ms
+      ease;
 
-  &::before {
+  contain:
+    layout
+    paint;
+
+  /*
+   * Tiny sheen.
+   * No blur.
+   */
+  &::after {
     content:
       '';
 
@@ -273,37 +268,29 @@
       0;
 
     z-index:
-      -1;
+      0;
 
     background:
       linear-gradient(
-        110deg,
+        115deg,
         transparent
-          15%,
+          28%,
         rgb(
           255 255 255 /
-          2.5%
+          1.5%
         )
-          48%,
+          50%,
         transparent
-          78%
+          72%
       );
 
     opacity:
       0;
 
-    transform:
-      translateX(
-        -25%
-      );
-
     transition:
       opacity
-        400ms
-        ease,
-      transform
-        750ms
-        var(--ease-out);
+      180ms
+      ease;
 
     pointer-events:
       none;
@@ -315,52 +302,20 @@
         var(
           --project-accent
         ) /
-        36%
+        42%
       );
 
-    box-shadow:
-      0
-        30px
-        90px
-        rgb(
-          0 0 0 /
-          30%
-        ),
-      0
-        0
-        65px
+    &::after {
+      opacity:
+        1;
+    }
+
+    .project-panel__number {
+      color:
         rgb(
           var(
             --project-accent
-          ) /
-          5%
-        ),
-      inset
-        0
-        1px
-        0
-        rgb(
-          255 255 255 /
-          6%
-        );
-
-    &::before {
-      opacity:
-        1;
-
-      transform:
-        translateX(
-          20%
-        );
-    }
-
-    .project-panel__ambient {
-      opacity:
-        1;
-
-      transform:
-        scale(
-          1.08
+          )
         );
     }
 
@@ -370,7 +325,7 @@
           var(
             --project-accent
           ) /
-          50%
+          48%
         );
 
       background:
@@ -378,13 +333,13 @@
           var(
             --project-accent
           ) /
-          12%
+          11%
         );
 
       svg {
         transform:
           translateX(
-            4px
+            3px
           );
       }
     }
@@ -392,7 +347,7 @@
 }
 
 /* =========================
-   PROJECT COLORS
+   COLORS
 ========================= */
 
 .project-panel--arcana {
@@ -428,79 +383,16 @@
 }
 
 /* =========================
-   AMBIENT
-========================= */
-
-.project-panel__ambient {
-  position:
-    absolute;
-
-  width:
-    min(
-      600px,
-      60vw
-    );
-
-  aspect-ratio:
-    1;
-
-  top:
-    -95%;
-
-  right:
-    -8%;
-
-  z-index:
-    -2;
-
-  border-radius:
-    50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgb(
-        var(
-          --project-accent
-        ) /
-        17%
-      ),
-      rgb(
-        var(
-          --project-accent
-        ) /
-        5%
-      )
-        35%,
-      transparent
-        68%
-    );
-
-  filter:
-    blur(
-      8px
-    );
-
-  opacity:
-    0.65;
-
-  transition:
-    opacity
-      500ms
-      ease,
-    transform
-      700ms
-      var(--ease-out);
-
-  pointer-events:
-    none;
-}
-
-/* =========================
    TOP
 ========================= */
 
 .project-panel__top {
+  position:
+    relative;
+
+  z-index:
+    1;
+
   display:
     flex;
 
@@ -538,8 +430,14 @@
     rgb(
       var(
         --project-accent
-      )
+      ) /
+      85%
     );
+
+  transition:
+    color
+    180ms
+    ease;
 }
 
 .project-panel__type {
@@ -632,6 +530,12 @@
 ========================= */
 
 .project-panel__body {
+  position:
+    relative;
+
+  z-index:
+    1;
+
   flex:
     1;
 
@@ -737,6 +641,12 @@
 ========================= */
 
 .project-panel__footer {
+  position:
+    relative;
+
+  z-index:
+    1;
+
   display:
     flex;
 
@@ -873,20 +783,12 @@
   text-transform:
     uppercase;
 
-  backdrop-filter:
-    blur(
-      12px
-    );
-
   transition:
-    transform
-      250ms
-      var(--ease-out),
     border-color
-      250ms
+      180ms
       ease,
     background-color
-      250ms
+      180ms
       ease;
 
   svg {
@@ -898,22 +800,8 @@
 
     transition:
       transform
-      250ms
-      var(--ease-out);
-  }
-
-  &:hover {
-    transform:
-      translateY(
-        -2px
-      );
-  }
-
-  &:active {
-    transform:
-      scale(
-        0.98
-      );
+      180ms
+      ease;
   }
 
   &:focus-visible {
@@ -1004,6 +892,12 @@
 
     border-radius:
       1rem;
+
+    /*
+     * Even cheaper on mobile.
+     */
+    box-shadow:
+      none;
   }
 
   .project-panel__top {
@@ -1080,17 +974,13 @@
   }
 }
 
-/* =========================
-   REDUCED MOTION
-========================= */
-
 @media (
   prefers-reduced-motion:
   reduce
 ) {
   .project-panel,
-  .project-panel::before,
-  .project-panel__ambient,
+  .project-panel::after,
+  .project-panel__number,
   .project-panel__button,
   .project-panel__button
     svg {

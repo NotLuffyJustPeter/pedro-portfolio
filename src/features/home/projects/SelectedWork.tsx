@@ -3,11 +3,6 @@ import {
 } from 'react-router-dom';
 
 import {
-  motion,
-  useReducedMotion,
-} from 'motion/react';
-
-import {
   GoArrowRight,
 } from 'react-icons/go';
 
@@ -38,9 +33,6 @@ interface SelectedWorkProps {
 export function SelectedWork({
   projects,
 }: SelectedWorkProps) {
-  const reduceMotion =
-    useReducedMotion();
-
   return (
     <Section
       id="selected-work"
@@ -94,37 +86,17 @@ export function SelectedWork({
                   }
                   delay={
                     index *
-                    0.06
+                    0.05
                   }
                 >
-                  <motion.article
+                  <article
                     className={[
                       'project-panel',
                       `project-panel--${project.slug}`,
                     ].join(
                       ' ',
                     )}
-                    whileHover={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            y: -4,
-                          }
-                    }
-                    transition={{
-                      duration:
-                        0.35,
-
-                      ease: [
-                        0.16,
-                        1,
-                        0.3,
-                        1,
-                      ],
-                    }}
                   >
-                    <div className="project-panel__ambient" />
-
                     <div className="project-panel__top">
                       <span className="project-panel__number">
                         {number}
@@ -201,7 +173,7 @@ export function SelectedWork({
                         </Link>
                       </div>
                     </div>
-                  </motion.article>
+                  </article>
                 </Reveal>
               );
             },
