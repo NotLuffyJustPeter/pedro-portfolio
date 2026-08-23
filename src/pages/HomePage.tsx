@@ -1,9 +1,18 @@
 import { Link } from 'react-router-dom';
-import { projects } from '../data/projects';
+import { PROJECTS } from '../data/projects';
 
 export function HomePage() {
-  const featuredProject = projects.find((project) => project.featured);
-  const selectedProjects = projects.filter((project) => !project.featured);
+  const featuredProject =
+  PROJECTS.find(
+    (project) =>
+      project.featured,
+  );
+
+const selectedProjects =
+  PROJECTS.filter(
+    (project) =>
+      !project.featured,
+  );
 
   return (
     <main className="foundation-page">
