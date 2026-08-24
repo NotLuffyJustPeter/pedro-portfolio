@@ -1,0 +1,1561 @@
+/* =========================================================
+   PROJECT HERO
+========================================================= */
+
+.project-hero {
+  position: relative;
+
+  min-height: 100svh;
+
+  overflow: clip;
+
+  background: #08090b;
+}
+
+/* =========================================================
+   AMBIENT
+========================================================= */
+
+.project-hero__ambient {
+  position: absolute;
+
+  top: -12%;
+  right: -14%;
+
+  width: 58vw;
+  height: 58vw;
+
+  border-radius: 50%;
+
+  opacity: 0.5;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        124,
+        92,
+        252,
+        0.1
+      ),
+      transparent 68%
+    );
+}
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.project-hero__inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    calc(100% - 3rem),
+    1440px
+  );
+
+  min-height: 100svh;
+
+  margin-inline: auto;
+
+  padding:
+    clamp(
+      8rem,
+      11vw,
+      10.5rem
+    )
+    0
+    clamp(
+      2.5rem,
+      4vw,
+      4rem
+    );
+}
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.project-hero__top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 2rem;
+}
+
+.project-hero__back {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  color:
+    rgba(
+      243,
+      244,
+      246,
+      0.48
+    );
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.57rem;
+
+  letter-spacing:
+    0.16em;
+
+  text-decoration: none;
+
+  transition:
+    color
+      220ms ease;
+
+  svg {
+    width: 0.9rem;
+    height: 0.9rem;
+
+    transition:
+      transform
+        220ms ease;
+  }
+
+  &:hover {
+    color: #fff;
+
+    svg {
+      transform:
+        translateX(-3px);
+    }
+  }
+}
+
+.project-hero__eyebrow {
+  color:
+    rgba(
+      243,
+      244,
+      246,
+      0.3
+    );
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.56rem;
+
+  letter-spacing:
+    0.15em;
+
+  text-align: right;
+}
+
+/* =========================================================
+   NORMAL HEADLINE
+========================================================= */
+
+.project-hero__headline-row {
+  width: 100%;
+
+  margin-top:
+    clamp(
+      3.8rem,
+      5.5vw,
+      5.8rem
+    );
+}
+
+.project-hero__title-wrap {
+  width: 100%;
+
+  margin: 0;
+
+  overflow: visible;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.project-hero__title {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items:
+    baseline;
+
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+
+  color: #f5f5f7;
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    clamp(
+      4.8rem,
+      8.2vw,
+      8.8rem
+    );
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing:
+    -0.075em;
+}
+
+/* =========================================================
+   LETTERS
+========================================================= */
+
+.project-hero__title-word {
+  display: inline-flex;
+
+  margin-right: 0.18em;
+
+  white-space: nowrap;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.project-hero__letter-mask {
+  display: inline-block;
+
+  overflow: hidden;
+
+  padding:
+    0.08em
+    0.025em
+    0.16em;
+
+  margin:
+    -0.08em
+    -0.025em
+    -0.16em;
+}
+
+.project-hero__letter {
+  display: inline-block;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+/* =========================================================
+   NORMAL LONG TITLES
+========================================================= */
+
+.project-hero--long-title {
+  .project-hero__title {
+    max-width: 15ch;
+
+    font-size:
+      clamp(
+        3.7rem,
+        5.8vw,
+        6.3rem
+      );
+
+    line-height: 0.92;
+
+    letter-spacing:
+      -0.065em;
+  }
+}
+
+.project-hero--very-long-title {
+  .project-hero__title {
+    max-width: 17ch;
+
+    font-size:
+      clamp(
+        3.1rem,
+        4.8vw,
+        5.2rem
+      );
+
+    line-height: 0.94;
+
+    letter-spacing:
+      -0.055em;
+  }
+}
+
+/* =========================================================
+   NORMAL STORY
+========================================================= */
+
+.project-hero__story {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(
+      18rem,
+      0.55fr
+    );
+
+  align-items: end;
+
+  gap:
+    clamp(
+      3rem,
+      8vw,
+      8rem
+    );
+
+  margin-top:
+    clamp(
+      3.5rem,
+      5.5vw,
+      5.5rem
+    );
+}
+
+.project-hero__subtitle-wrap {
+  > span {
+    display: block;
+
+    margin-bottom: 1rem;
+
+    color:
+      rgba(
+        243,
+        244,
+        246,
+        0.3
+      );
+
+    font-family:
+      var(--font-mono);
+
+    font-size: 0.55rem;
+
+    letter-spacing:
+      0.15em;
+  }
+
+  h2 {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: #f3f4f6;
+
+    font-family:
+      var(--font-display);
+
+    font-size:
+      clamp(
+        2.4rem,
+        4vw,
+        4.3rem
+      );
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing:
+      -0.052em;
+  }
+}
+
+.project-hero__description {
+  max-width: 450px;
+
+  margin: 0;
+
+  color:
+    rgba(
+      225,
+      228,
+      235,
+      0.62
+    );
+
+  font-size: 0.94rem;
+
+  line-height: 1.72;
+}
+
+/* =========================================================
+   EMILY CUSTOM HERO
+========================================================= */
+
+.project-hero--emily {
+  min-height: auto;
+
+  .project-hero__inner {
+    min-height: auto;
+
+    padding-bottom:
+      clamp(
+        2.5rem,
+        4vw,
+        4rem
+      );
+  }
+}
+
+.project-hero__emily-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(
+      360px,
+      0.78fr
+    );
+
+  align-items: center;
+
+  gap:
+    clamp(
+      3rem,
+      6vw,
+      7rem
+    );
+
+  margin-top:
+    clamp(
+      3.8rem,
+      5.5vw,
+      5.5rem
+    );
+}
+
+/* =========================================================
+   EMILY LEFT
+========================================================= */
+
+.project-hero__emily-copy {
+  min-width: 0;
+}
+
+.project-hero__case-label {
+  display: block;
+
+  margin-bottom:
+    clamp(
+      1.4rem,
+      2vw,
+      2rem
+    );
+
+  color:
+    rgba(
+      243,
+      244,
+      246,
+      0.3
+    );
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.55rem;
+
+  letter-spacing:
+    0.15em;
+}
+
+.project-hero__title--emily {
+  max-width: 12ch;
+
+  font-size:
+    clamp(
+      3.2rem,
+      4.8vw,
+      5.4rem
+    );
+
+  line-height: 0.95;
+
+  letter-spacing:
+    -0.058em;
+}
+
+/* =========================================================
+   EMILY RIGHT
+========================================================= */
+
+.project-hero__emily-visual-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+.project-hero__visual {
+  width: 100%;
+
+  max-width: 450px;
+
+  .emily-terminal {
+    max-width: 450px;
+  }
+}
+
+.project-hero__emily-description {
+  width: 100%;
+
+  max-width: 450px;
+
+  margin:
+    clamp(
+      1.25rem,
+      2vw,
+      1.8rem
+    )
+    0
+    0;
+
+  color:
+    rgba(
+      225,
+      228,
+      235,
+      0.58
+    );
+
+  font-size: 0.9rem;
+
+  line-height: 1.72;
+}
+
+/* =========================================================
+   CORE STACK
+========================================================= */
+
+.project-hero__stack-row {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-top:
+    clamp(
+      2.6rem,
+      4vw,
+      3.8rem
+    );
+}
+
+.project-hero--emily {
+  .project-hero__stack-row {
+    margin-top:
+      clamp(
+        2.2rem,
+        3vw,
+        3rem
+      );
+  }
+}
+
+.project-hero__stack-label {
+  margin-right: 0.3rem;
+
+  color:
+    rgba(
+      243,
+      244,
+      246,
+      0.3
+    );
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.53rem;
+
+  letter-spacing:
+    0.15em;
+}
+
+.project-hero__stack {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+}
+
+/* =========================================================
+   TECH
+========================================================= */
+
+.project-hero__tech {
+  --tech-color:
+    #9f86ff;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  border-radius: 11px;
+
+  color:
+    rgba(
+      243,
+      244,
+      246,
+      0.36
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.018
+    );
+
+  transition:
+    color 250ms ease,
+    border-color 250ms ease,
+    background 250ms ease,
+    transform 250ms ease,
+    box-shadow 250ms ease;
+
+  svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (
+  hover: hover
+) and (
+  pointer: fine
+) {
+  .project-hero__tech:hover {
+    transform:
+      translateY(-3px);
+
+    color:
+      var(
+        --tech-color
+      );
+
+    border-color:
+      color-mix(
+        in srgb,
+        var(
+            --tech-color
+          )
+          45%,
+        transparent
+      );
+
+    background:
+      color-mix(
+        in srgb,
+        var(
+            --tech-color
+          )
+          8%,
+        transparent
+      );
+
+    box-shadow:
+      0
+      10px
+      28px
+      color-mix(
+        in srgb,
+        var(
+            --tech-color
+          )
+          12%,
+        transparent
+      );
+  }
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.project-hero__actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  margin-left: auto;
+}
+
+/* =========================================================
+   GALAXY BUTTON
+========================================================= */
+
+.galaxy-btn {
+  --btn-bg: #0c0c14;
+  --btn-primary: #8553f4;
+  --btn-secondary: #3b82f6;
+  --btn-accent: #f43f8e;
+
+  position: relative;
+
+  z-index: 1;
+
+  display: inline-flex;
+
+  padding:
+    0.82rem
+    1.3rem;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-radius: 11px;
+
+  text-decoration: none;
+
+  background:
+    var(--btn-bg);
+
+  box-shadow:
+    0
+    0.5rem
+    1.5rem
+    -0.5rem
+    rgba(
+      133,
+      83,
+      244,
+      0.34
+    );
+
+  transition:
+    transform
+      200ms ease;
+}
+
+.galaxy-btn::before {
+  content: '';
+
+  position: absolute;
+
+  inset: -4px;
+
+  z-index: 0;
+
+  border-radius:
+    inherit;
+
+  opacity: 0.6;
+
+  filter: blur(8px);
+
+  background:
+    conic-gradient(
+      from 0deg,
+      var(--btn-bg)
+        0deg,
+      var(--btn-primary)
+        60deg,
+      var(--btn-secondary)
+        120deg,
+      var(--btn-bg)
+        180deg,
+      var(--btn-accent)
+        240deg,
+      var(--btn-primary)
+        300deg,
+      var(--btn-bg)
+        360deg
+    );
+
+  animation:
+    galaxy-rotate
+    6s
+    linear
+    infinite;
+}
+
+.galaxy-btn::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 2px;
+
+  z-index: 1;
+
+  border-radius: 9px;
+
+  background:
+    var(--btn-bg);
+}
+
+.galaxy-btn__content {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  color: white;
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.58rem;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+}
+
+.galaxy-btn__icon {
+  width: 16px;
+  height: 16px;
+
+  transition:
+    transform
+      300ms ease;
+}
+
+.galaxy-btn__stars {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  opacity: 0.24;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      white 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      white 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      white 0.5px,
+      transparent 1px
+    );
+}
+
+.galaxy-btn:hover {
+  transform:
+    translateY(-2px);
+
+  &::before {
+    opacity: 0.95;
+
+    animation-duration: 3s;
+  }
+
+  .galaxy-btn__icon {
+    transform:
+      translateX(3px)
+      rotate(-8deg);
+  }
+
+  .galaxy-btn__stars {
+    opacity: 0.7;
+  }
+}
+
+@keyframes galaxy-rotate {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* =========================================================
+   GITHUB
+========================================================= */
+
+.github-shine-btn {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.8rem;
+
+  height: 44px;
+
+  padding:
+    0
+    1.1rem;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border-radius: 10px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  background: #0b0c10;
+
+  transition:
+    transform
+      250ms ease,
+    border-color
+      250ms ease;
+}
+
+.github-shine-btn__shine {
+  position: absolute;
+
+  top: -2.5rem;
+  right: -1rem;
+
+  width: 2rem;
+  height: 7rem;
+
+  transform:
+    translateX(3rem)
+    rotate(12deg);
+
+  opacity: 0.1;
+
+  background: #fff;
+
+  transition:
+    transform
+      800ms ease;
+}
+
+.github-shine-btn__main {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.57rem;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.github-shine-btn__star {
+  position: relative;
+
+  z-index: 2;
+
+  width: 16px;
+  height: 16px;
+
+  fill:
+    rgba(
+      255,
+      255,
+      255,
+      0.24
+    );
+
+  transition:
+    fill
+      250ms ease,
+    transform
+      250ms ease;
+}
+
+.github-shine-btn:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.28
+    );
+
+  .github-shine-btn__shine {
+    transform:
+      translateX(-12rem)
+      rotate(12deg);
+  }
+
+  .github-shine-btn__star {
+    fill: #fde047;
+
+    transform:
+      rotate(12deg)
+      scale(1.08);
+  }
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.project-hero__meta {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  margin-top: 1.8rem;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+.project-hero__meta-item {
+  padding:
+    1.15rem
+    0;
+
+  &:not(
+      :first-child
+    ) {
+    padding-left:
+      1.5rem;
+
+    border-left:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.07
+      );
+  }
+
+  span,
+  strong {
+    display: block;
+  }
+
+  span {
+    margin-bottom:
+      0.42rem;
+
+    color:
+      rgba(
+        243,
+        244,
+        246,
+        0.3
+      );
+
+    font-family:
+      var(--font-mono);
+
+    font-size: 0.5rem;
+
+    letter-spacing:
+      0.13em;
+  }
+
+  strong {
+    color:
+      rgba(
+        243,
+        244,
+        246,
+        0.8
+      );
+
+    font-size: 0.8rem;
+
+    font-weight: 500;
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (
+  min-width: 1500px
+) {
+  .project-hero__emily-layout {
+    grid-template-columns:
+      minmax(0, 1.05fr)
+      minmax(
+        400px,
+        0.7fr
+      );
+  }
+
+  .project-hero__title--emily {
+    max-width: 13ch;
+
+    font-size:
+      clamp(
+        3.5rem,
+        4.5vw,
+        5.6rem
+      );
+  }
+
+  .project-hero__visual,
+  .project-hero__emily-description {
+    max-width: 470px;
+  }
+
+  .project-hero__visual {
+    .emily-terminal {
+      max-width: 470px;
+    }
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (
+  max-width: 1100px
+) {
+  .project-hero__emily-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(
+        320px,
+        0.78fr
+      );
+
+    gap: 2.5rem;
+  }
+
+  .project-hero__title--emily {
+    font-size:
+      clamp(
+        2.8rem,
+        4.8vw,
+        4.3rem
+      );
+  }
+
+  .project-hero__visual,
+  .project-hero__emily-description {
+    max-width: 390px;
+  }
+
+  .project-hero__visual {
+    .emily-terminal {
+      max-width: 390px;
+    }
+  }
+
+  .project-hero__story {
+    grid-template-columns:
+      1fr;
+  }
+
+  .project-hero__description {
+    max-width: 650px;
+  }
+
+  .project-hero__actions {
+    width: 100%;
+
+    margin-left: 0;
+
+    margin-top: 0.4rem;
+  }
+
+  .project-hero__meta {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .project-hero__meta-item {
+    &:nth-child(3) {
+      border-left: 0;
+
+      border-top:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.07
+        );
+    }
+
+    &:nth-child(4) {
+      border-top:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.07
+        );
+    }
+  }
+}
+
+/* =========================================================
+   EMILY STACKS
+========================================================= */
+
+@media (
+  max-width: 850px
+) {
+  .project-hero__emily-layout {
+    grid-template-columns:
+      1fr;
+
+    gap: 2.75rem;
+  }
+
+  .project-hero__title--emily {
+    max-width: 14ch;
+
+    font-size:
+      clamp(
+        3rem,
+        8vw,
+        4.8rem
+      );
+  }
+
+  .project-hero__emily-visual-column {
+    align-items:
+      flex-start;
+  }
+
+  .project-hero__visual,
+  .project-hero__emily-description {
+    width: 100%;
+
+    max-width: 520px;
+  }
+
+  .project-hero__visual {
+    .emily-terminal {
+      max-width: 520px;
+    }
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+  max-width: 720px
+) {
+  .project-hero {
+    min-height: auto;
+  }
+
+  .project-hero__inner {
+    width:
+      calc(
+        100% - 2rem
+      );
+
+    min-height: auto;
+
+    padding:
+      7rem
+      0
+      3rem;
+  }
+
+  .project-hero__top {
+    align-items:
+      flex-start;
+  }
+
+  .project-hero__eyebrow {
+    max-width: 46%;
+
+    line-height: 1.5;
+  }
+
+  .project-hero__headline-row {
+    margin-top: 3.25rem;
+  }
+
+  .project-hero__title {
+    font-size:
+      clamp(
+        3.5rem,
+        17vw,
+        5.7rem
+      );
+
+    line-height: 0.92;
+  }
+
+  .project-hero--long-title,
+  .project-hero--very-long-title {
+    .project-hero__title {
+      max-width: 100%;
+
+      font-size:
+        clamp(
+          2.9rem,
+          12vw,
+          4.6rem
+        );
+
+      line-height: 0.95;
+    }
+  }
+
+  .project-hero__emily-layout {
+    margin-top: 3rem;
+
+    gap: 2.4rem;
+  }
+
+  .project-hero__title--emily {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.7rem,
+        10.5vw,
+        4.2rem
+      );
+
+    line-height: 0.98;
+  }
+
+  .project-hero__case-label {
+    margin-bottom:
+      1.25rem;
+  }
+
+  .project-hero__emily-description {
+    font-size: 0.88rem;
+  }
+
+  .project-hero__story {
+    gap: 1.8rem;
+
+    margin-top: 3rem;
+  }
+
+  .project-hero__subtitle-wrap {
+    h2 {
+      font-size:
+        clamp(
+          2.1rem,
+          9.5vw,
+          3.4rem
+        );
+    }
+  }
+
+  .project-hero__stack-row {
+    align-items:
+      flex-start;
+  }
+
+  .project-hero__stack-label {
+    width: 100%;
+  }
+
+  .project-hero__actions {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    a {
+      justify-content:
+        center;
+    }
+  }
+
+  .project-hero__meta {
+    grid-template-columns:
+      1fr;
+  }
+
+  .project-hero__meta-item {
+    padding:
+      1rem
+      0;
+
+    &:not(
+        :first-child
+      ) {
+      padding-left: 0;
+
+      border-left: 0;
+
+      border-top:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.06
+        );
+    }
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (
+  max-width: 520px
+) {
+  .project-hero__title--emily {
+    font-size:
+      clamp(
+        2.5rem,
+        11vw,
+        3.8rem
+      );
+  }
+
+  .project-hero__tech {
+    width: 39px;
+    height: 39px;
+
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .galaxy-btn::before {
+    animation: none;
+  }
+
+  .project-hero__tech,
+  .project-hero__back,
+  .github-shine-btn,
+  .galaxy-btn {
+    transition: none;
+  }
+}

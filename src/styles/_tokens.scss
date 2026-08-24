@@ -1,0 +1,85 @@
+:root {
+  /* =========================
+     COLORS
+  ========================= */
+
+  --color-bg: #08090b;
+  --color-bg-soft: #0b0c0f;
+
+  --color-surface: #0e0f13;
+  --color-surface-raised: #121318;
+  --color-surface-hover: #16171d;
+
+  --color-text: #f3f4f6;
+  --color-text-secondary: #a7abb4;
+  --color-text-muted: #6d717a;
+
+  --color-accent: #7c5cfc;
+  --color-accent-soft: rgb(124 92 252 / 14%);
+  --color-accent-glow: rgb(124 92 252 / 28%);
+
+  --color-border: rgb(255 255 255 / 8%);
+  --color-border-strong: rgb(255 255 255 / 14%);
+  --color-border-hover: rgb(255 255 255 / 22%);
+
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
+  --font-display:
+    'Space Grotesk Variable',
+    sans-serif;
+
+  --font-body:
+    'Inter Variable',
+    sans-serif;
+
+  --font-mono:
+    'JetBrains Mono',
+    monospace;
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  --container:
+    1440px;
+
+  --container-reading:
+    840px;
+
+  --page-padding:
+    clamp(1.25rem, 4vw, 4rem);
+
+  --section-space:
+    clamp(5rem, 10vw, 10rem);
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm:
+    8px;
+
+  --radius-md:
+    16px;
+
+  --radius-lg:
+    28px;
+
+  /* =========================
+     MOTION
+  ========================= */
+
+  --ease-out:
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  --duration-fast:
+    180ms;
+
+  --duration-medium:
+    420ms;
+
+  --duration-slow:
+    700ms;
+}

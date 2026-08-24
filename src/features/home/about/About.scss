@@ -1,0 +1,750 @@
+.about {
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border-top:
+    1px solid
+    var(--color-border);
+
+  background:
+    #08090b;
+}
+
+/* =========================
+   TOP
+========================= */
+
+.about__top {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    2rem;
+
+  padding-bottom:
+    1.75rem;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+
+  .eyebrow {
+    color:
+      var(--color-text-secondary);
+
+    font-family:
+      var(--font-mono);
+
+    font-size:
+      clamp(
+        0.78rem,
+        0.9vw,
+        0.9rem
+      );
+
+    font-weight:
+      500;
+
+    letter-spacing:
+      0.14em;
+  }
+
+  > span {
+    color:
+      var(--color-text-muted);
+
+    font-family:
+      var(--font-mono);
+
+    font-size:
+      clamp(
+        0.68rem,
+        0.78vw,
+        0.78rem
+      );
+
+    font-weight:
+      500;
+
+    letter-spacing:
+      0.12em;
+  }
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.about__layout {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.12fr
+    )
+    minmax(
+      340px,
+      0.88fr
+    );
+
+  align-items:
+    center;
+
+  gap:
+    clamp(
+      3rem,
+      6vw,
+      7rem
+    );
+
+  padding-block:
+    clamp(
+      3.5rem,
+      6vw,
+      6rem
+    );
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.about__content {
+  min-width:
+    0;
+
+  h2 {
+    max-width:
+      760px;
+
+    margin:
+      0;
+
+    font-family:
+      var(--font-display);
+
+    font-size:
+      clamp(
+        3.6rem,
+        6.2vw,
+        6.2rem
+      );
+
+    font-weight:
+      500;
+
+    line-height:
+      0.88;
+
+    letter-spacing:
+      -0.07em;
+  }
+}
+
+.about__lead {
+  max-width:
+    650px;
+
+  margin:
+    clamp(
+      2rem,
+      3.5vw,
+      3rem
+    )
+    0
+    0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    clamp(
+      1.25rem,
+      1.8vw,
+      1.7rem
+    );
+
+  line-height:
+    1.3;
+
+  letter-spacing:
+    -0.03em;
+}
+
+.about__copy {
+  max-width:
+    610px;
+
+  margin:
+    1.25rem
+    0
+    0;
+
+  color:
+    var(--color-text-muted);
+
+  font-size:
+    clamp(
+      0.88rem,
+      1vw,
+      0.98rem
+    );
+
+  line-height:
+    1.7;
+}
+
+/* =========================
+   PROFILE GRID
+========================= */
+
+.about__profile-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    0.7rem;
+
+  margin-top:
+    clamp(
+      2.5rem,
+      4vw,
+      3.75rem
+    );
+}
+
+/*
+ * BorderGlow owns the outer
+ * visual surface.
+ */
+
+.about-profile-glow {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    0.9rem;
+
+  /*
+   * Prevent BorderGlow's large
+   * blurred layer from bleeding
+   * below the cards.
+   */
+  contain:
+    paint;
+}
+
+.about-profile {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  min-height:
+    150px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    space-between;
+
+  gap:
+    1.2rem;
+
+  padding:
+    1rem;
+
+  border-radius:
+    0.9rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(
+        124 92 252 /
+        5%
+      ),
+      rgb(
+        10 11 14 /
+        72%
+      )
+    );
+
+  transition:
+    transform
+      300ms
+      var(--ease-out);
+
+  &:hover {
+    transform:
+      translateY(
+        -3px
+      );
+
+    .about-profile__icon {
+      border-color:
+        rgb(
+          124 92 252 /
+          38%
+        );
+
+      background:
+        rgb(
+          124 92 252 /
+          12%
+        );
+
+      color:
+        #c2b7ff;
+
+      box-shadow:
+        0
+        0
+        24px
+        rgb(
+          124 92 252 /
+          12%
+        );
+    }
+  }
+}
+
+.about-profile__icon {
+  width:
+    36px;
+
+  height:
+    36px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    rgb(
+      255 255 255 /
+      9%
+    );
+
+  border-radius:
+    0.65rem;
+
+  background:
+    rgb(
+      255 255 255 /
+      3%
+    );
+
+  color:
+    var(--color-text-secondary);
+
+  transition:
+    color
+      250ms
+      ease,
+    border-color
+      250ms
+      ease,
+    background
+      250ms
+      ease,
+    box-shadow
+      250ms
+      ease;
+
+  svg {
+    width:
+      16px;
+
+    height:
+      16px;
+  }
+}
+
+.about-profile__content {
+  min-width:
+    0;
+
+  > span {
+    display:
+      block;
+
+    color:
+      var(--color-text-muted);
+
+    font-family:
+      var(--font-mono);
+
+    font-size:
+      0.56rem;
+
+    letter-spacing:
+      0.1em;
+  }
+
+  > strong {
+    display:
+      block;
+
+    margin-top:
+      0.5rem;
+
+    color:
+      var(--color-text);
+
+    font-family:
+      var(--font-display);
+
+    font-size:
+      clamp(
+        1rem,
+        1.2vw,
+        1.15rem
+      );
+
+    font-weight:
+      500;
+
+    letter-spacing:
+      -0.025em;
+  }
+
+  > p {
+    margin:
+      0.35rem
+      0
+      0;
+
+    color:
+      var(--color-text-muted);
+
+    font-size:
+      0.7rem;
+
+    line-height:
+      1.45;
+  }
+}
+
+/* =========================
+   LANYARD
+========================= */
+
+.about__lanyard {
+  min-width:
+    0;
+}
+
+.about__lanyard-stage {
+  position:
+    relative;
+
+  min-height:
+    480px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgb(
+      255 255 255 /
+      6%
+    );
+
+  border-radius:
+    1.25rem;
+
+  background:
+    radial-gradient(
+      circle
+        at 50%
+        42%,
+      rgb(
+        124 92 252 /
+        8%
+      ),
+      transparent
+        48%
+    ),
+    rgb(
+      255 255 255 /
+      1.2%
+    );
+}
+
+.about__lanyard-glow {
+  position:
+    absolute;
+
+  width:
+    70%;
+
+  aspect-ratio:
+    1;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgb(
+        124 92 252 /
+        10%
+      ),
+      transparent
+        68%
+    );
+
+  pointer-events:
+    none;
+}
+
+.about__loading {
+  width:
+    150px;
+
+  aspect-ratio:
+    0.68;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    space-between;
+
+  padding:
+    1rem;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    0.8rem;
+
+  background:
+    var(--color-surface);
+
+  font-family:
+    var(--font-mono);
+
+  span {
+    color:
+      var(--color-accent);
+  }
+
+  small {
+    color:
+      var(--color-text-muted);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (
+  max-width: 1000px
+) {
+  .about__layout {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      2.5rem;
+  }
+
+  .about__content {
+    h2 {
+      max-width:
+        700px;
+    }
+  }
+
+  .about__lanyard-stage {
+    width:
+      min(
+        100%,
+        650px
+      );
+
+    min-height:
+      450px;
+
+    margin-inline:
+      auto;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (
+  max-width: 650px
+) {
+  .about__top {
+    padding-bottom:
+      1.4rem;
+
+    > span {
+      display:
+        none;
+    }
+  }
+
+  .about__layout {
+    padding-block:
+      3rem;
+
+    gap:
+      2.25rem;
+  }
+
+  .about__content {
+    h2 {
+      font-size:
+        clamp(
+          3.3rem,
+          14vw,
+          4.6rem
+        );
+
+      line-height:
+        0.9;
+    }
+  }
+
+  .about__lead {
+    margin-top:
+      2rem;
+
+    font-size:
+      1.18rem;
+  }
+
+  .about__copy {
+    font-size:
+      0.85rem;
+  }
+
+  .about__profile-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      0.75rem;
+
+    margin-top:
+      2.5rem;
+  }
+
+  .about-profile-glow {
+    width:
+      100%;
+  }
+
+  .about-profile {
+    min-height:
+      auto;
+
+    display:
+      grid;
+
+    grid-template-columns:
+      auto
+      1fr;
+
+    align-items:
+      center;
+
+    gap:
+      0.9rem;
+
+    padding:
+      0.9rem;
+  }
+
+  .about__lanyard-stage {
+    min-height:
+      430px;
+
+    border-radius:
+      1rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .about-profile,
+  .about-profile__icon {
+    transition:
+      none;
+  }
+}

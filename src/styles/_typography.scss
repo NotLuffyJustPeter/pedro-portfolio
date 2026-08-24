@@ -1,0 +1,108 @@
+.display {
+  margin: 0;
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    clamp(4rem, 10vw, 10rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.86;
+
+  letter-spacing:
+    -0.075em;
+}
+
+.heading-1 {
+  margin: 0;
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    clamp(3rem, 7vw, 7rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.9;
+
+  letter-spacing:
+    -0.065em;
+}
+
+.heading-2 {
+  margin: 0;
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    clamp(2.25rem, 5vw, 4.5rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.95;
+
+  letter-spacing:
+    -0.05em;
+}
+
+.heading-3 {
+  margin: 0;
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    clamp(1.4rem, 2.5vw, 2.2rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -0.035em;
+}
+
+.body-large {
+  font-size:
+    clamp(1.1rem, 1.5vw, 1.4rem);
+
+  line-height:
+    1.65;
+}
+
+.body {
+  font-size:
+    clamp(0.95rem, 1.1vw, 1.075rem);
+
+  line-height:
+    1.7;
+}
+
+.eyebrow {
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    clamp(0.68rem, 0.8vw, 0.78rem);
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.13em;
+
+  text-transform:
+    uppercase;
+}

@@ -1,0 +1,47 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08090b"></stop>
+
+      <stop offset="1" stop-color="#151120"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1200" rx="55" fill="url(#bg)"></rect>
+
+  <rect x="46" y="46" width="708" height="1108" rx="35" fill="none" stroke="#ffffff" stroke-opacity=".09"></rect>
+
+  <text x="70" y="110" fill="#7c5cfc" font-family="monospace" font-size="28">
+    PD / ENGINEERING
+  </text>
+
+  <text x="70" y="375" fill="#f5f7fa" font-family="Arial, sans-serif" font-size="95" font-weight="700">
+    BUILD.
+  </text>
+
+  <text x="70" y="475" fill="#f5f7fa" font-family="Arial, sans-serif" font-size="95" font-weight="700">
+    SHIP.
+  </text>
+
+  <text x="70" y="575" fill="#f5f7fa" font-family="Arial, sans-serif" font-size="95" font-weight="700">
+    ITERATE.
+  </text>
+
+  <line x1="70" y1="660" x2="730" y2="660" stroke="#ffffff" stroke-opacity=".1"></line>
+
+  <text x="70" y="730" fill="#a1a5ae" font-family="monospace" font-size="26">
+    REACT / NEXT.JS
+  </text>
+
+  <text x="70" y="785" fill="#a1a5ae" font-family="monospace" font-size="26">
+    NODE / NESTJS
+  </text>
+
+  <text x="70" y="840" fill="#a1a5ae" font-family="monospace" font-size="26">
+    POSTGRESQL / FLUTTER
+  </text>
+
+  <text x="70" y="1080" fill="#6d717a" font-family="monospace" font-size="20">
+    PEDROGADEL@GMAIL.COM
+  </text>
+</svg>
