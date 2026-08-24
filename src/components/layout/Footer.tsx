@@ -23,6 +23,10 @@ import {
   Container,
 } from './Container';
 
+import {
+  assetUrl,
+} from '../../shared/utils/assetUrl';
+
 import './Footer.scss';
 
 const FOOTER_LINKS = [
@@ -162,7 +166,9 @@ export function Footer() {
             aria-label="Go to homepage"
           >
             <img
-              src="/brand/pd-mark.svg"
+              src={assetUrl(
+                '/brand/pd-mark.svg',
+              )}
               alt="Pedro Delgado"
             />
           </Link>
@@ -253,7 +259,9 @@ export function Footer() {
             </button>
 
             <a
-              href="/cv/Pedro-Delgado-CV-2026.pdf"
+              href={assetUrl(
+                  '/cv/Pedro-Delgado-CV-2026.pdf',
+                )}
               target="_blank"
               rel="noreferrer"
               aria-label="Open CV"

@@ -2,6 +2,8 @@ import {
   PROJECTS,
 } from '../data/projects';
 
+import { useRouteScroll } from '../shared/hooks/useRouteScroll';
+
 import {
   Footer,
 } from '../components/layout/Footer';
@@ -24,11 +26,11 @@ import {
 
 import {
   FeaturedProject,
-} from '../features/home/projects/FeaturedProject';
+} from '../features/projects/FeaturedProject';
 
 import {
   SelectedWork,
-} from '../features/home/projects/SelectedWork';
+} from '../features/projects/SelectedWork';
 
 import {
   WhatIDo,
@@ -50,6 +52,8 @@ export function HomePage() {
       (project) =>
         !project.featured,
     );
+
+    useRouteScroll();
 
   return (
     <main id="top">

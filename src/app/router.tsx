@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { RootLayout } from '../layouts/RootLayout';
 import { HomePage } from '../pages/HomePage';
-import { ProjectPage } from '../pages/ProjectPage';
+import { ProjectDetailPage } from '../features/projects/pages/ProjectDetailPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 
 export const router = createBrowserRouter(
@@ -17,7 +17,7 @@ export const router = createBrowserRouter(
         },
         {
           path: 'project/:slug',
-          element: <ProjectPage />,
+          element: <ProjectDetailPage />,
         },
         {
           path: '*',

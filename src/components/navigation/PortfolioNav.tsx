@@ -10,6 +10,10 @@ import {
   PROFILE,
 } from '../../data/profile';
 
+import {
+  assetUrl,
+} from '../../shared/utils/assetUrl';
+
 export function PortfolioNav() {
   const baseUrl =
     import.meta.env.BASE_URL;
@@ -140,7 +144,9 @@ export function PortfolioNav() {
 
   return (
     <CardNav
-      logo="/brand/pd-logo.svg"
+      logo={assetUrl(
+        '/brand/pd-logo.svg',
+      )}
       logoAlt="Pedro Delgado"
       items={items}
       baseColor="rgba(14, 15, 19, 0.9)"

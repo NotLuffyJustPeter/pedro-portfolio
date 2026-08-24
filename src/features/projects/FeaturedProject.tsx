@@ -19,16 +19,16 @@ import {
 import {
   Container,
   Section,
-} from '../../../components/layout';
+} from '../../components/layout';
 
 import {
   Eyebrow,
   Reveal,
-} from '../../../components/ui';
+} from '../../components/ui';
 
 import type {
   ProjectSummary,
-} from '../../../types/project';
+} from '../../types/project';
 
 import {
   TechDock,

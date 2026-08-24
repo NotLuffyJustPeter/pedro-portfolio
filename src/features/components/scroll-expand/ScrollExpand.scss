@@ -1,0 +1,455 @@
+.scroll-expand {
+  position: relative;
+
+  height: 220vh;
+
+  background: #08090b;
+}
+
+/* ========================================
+   STICKY VIEWPORT
+======================================== */
+
+.scroll-expand__sticky {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: #08090b;
+}
+
+/* ========================================
+   BACKGROUND DEPTH
+======================================== */
+
+.scroll-expand__backdrop {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 9, 11, 0),
+      rgba(5, 6, 9, 0.9)
+    );
+}
+
+.scroll-expand__glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(
+    80vw,
+    1100px
+  );
+
+  aspect-ratio: 1.5;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(124, 92, 252, 0.18),
+      rgba(124, 92, 252, 0.04) 40%,
+      transparent 70%
+    );
+
+  filter: blur(50px);
+}
+
+/* ========================================
+   MEDIA
+======================================== */
+
+.scroll-expand__media {
+  position: relative;
+
+  z-index: 2;
+
+  width: 72vw;
+  height: 64vh;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background: #0d0f14;
+
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.42);
+
+  will-change:
+    width,
+    height,
+    transform,
+    border-radius;
+
+  img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    will-change: transform;
+  }
+}
+
+/* ========================================
+   OVERLAY
+======================================== */
+
+.scroll-expand__overlay {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 9, 11, 0.04),
+      rgba(8, 9, 11, 0.28)
+    );
+}
+
+/* ========================================
+   SCROLL LABEL
+======================================== */
+
+.scroll-expand__label {
+  position: absolute;
+
+  z-index: 5;
+
+  top: clamp(
+    1.5rem,
+    4vh,
+    2.5rem
+  );
+
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    var(--color-text-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.64rem;
+
+  letter-spacing: 0.15em;
+
+  white-space: nowrap;
+}
+
+.scroll-expand__label-arrow {
+  color: #a78bfa;
+
+  font-size: 0.8rem;
+}
+
+/* ========================================
+   PRODUCT LABEL
+======================================== */
+
+.scroll-expand__product-label {
+  position: absolute;
+
+  z-index: 4;
+
+  left: clamp(
+    1rem,
+    3vw,
+    3rem
+  );
+
+  right: clamp(
+    1rem,
+    3vw,
+    3rem
+  );
+
+  bottom: clamp(
+    1rem,
+    3vw,
+    2.5rem
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  pointer-events: none;
+
+  span {
+    font-family:
+      var(--font-mono);
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.14em;
+  }
+
+  span:first-child {
+    color:
+      rgba(
+        243,
+        244,
+        246,
+        0.62
+      );
+  }
+
+  span:last-child {
+    color:
+      rgba(
+        243,
+        244,
+        246,
+        0.85
+      );
+  }
+}
+
+/* ========================================
+   PLACEHOLDER
+======================================== */
+
+.scroll-expand__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(124, 92, 252, 0.16),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #0b0c10,
+      #11131a
+    );
+}
+
+.scroll-expand__placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+
+  text-align: center;
+}
+
+.scroll-expand__placeholder-label {
+  color:
+    var(--color-text-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.16em;
+}
+
+.scroll-expand__placeholder-inner strong {
+  color:
+    rgba(
+      243,
+      244,
+      246,
+      0.11
+    );
+
+  font-family:
+    var(--font-display);
+
+  font-size: clamp(
+    4rem,
+    13vw,
+    12rem
+  );
+
+  font-weight: 600;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.08em;
+}
+
+.scroll-expand__placeholder-copy {
+  color:
+    var(--color-text-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.08em;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .scroll-expand {
+    height: 190vh;
+  }
+
+  .scroll-expand__media {
+    width:
+      calc(100vw - 2rem);
+
+    height: 68vh;
+  }
+
+  .scroll-expand__glow {
+    width: 110vw;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .scroll-expand {
+    height: 170vh;
+  }
+
+  .scroll-expand__media {
+    width:
+      calc(100vw - 1rem);
+
+    height: 62vh;
+  }
+
+  .scroll-expand__label {
+    top: 1.25rem;
+  }
+
+  .scroll-expand__product-label {
+    align-items: flex-end;
+
+    span:last-child {
+      text-align: right;
+    }
+  }
+
+  .scroll-expand__placeholder-inner {
+    padding-inline: 1rem;
+  }
+
+  .scroll-expand__placeholder-inner strong {
+    font-size: clamp(
+      3.5rem,
+      20vw,
+      6rem
+    );
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-expand {
+    height: auto;
+
+    padding:
+      3rem
+      0
+      6rem;
+  }
+
+  .scroll-expand__sticky {
+    position: relative;
+
+    height: auto;
+
+    padding:
+      2rem
+      0;
+  }
+
+  .scroll-expand__media {
+    width:
+      calc(100vw - 2rem);
+
+    height:
+      min(
+        75vh,
+        760px
+      );
+
+    border-radius: 20px;
+
+    will-change: auto;
+
+    img {
+      will-change: auto;
+    }
+  }
+
+  .scroll-expand__label {
+    display: none;
+  }
+
+  .scroll-expand__product-label {
+    opacity: 1;
+  }
+
+  .scroll-expand__glow {
+    opacity: 0.2;
+  }
+}

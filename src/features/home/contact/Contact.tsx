@@ -23,6 +23,10 @@ import {
 } from '../../../components/layout';
 
 import {
+  assetUrl,
+} from '../../../shared/utils/assetUrl';
+
+import {
   Eyebrow,
   Reveal,
 } from '../../../components/ui';
@@ -129,7 +133,9 @@ export function Contact() {
             <div className="contact__heading">
               <MaskedHeading
                 text="LET'S BUILD SOMETHING USEFUL."
-                src="/images/contact/contact-mask.svg"
+                src={assetUrl(
+                  '/images/contact/contact-mask.svg',
+                )}
                 fillScale={1.18}
                 parallax={14}
                 drift={8}
