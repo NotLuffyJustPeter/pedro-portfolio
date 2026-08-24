@@ -85,14 +85,10 @@
   }
 }
 
-/*
- * If the icons fit:
- *    margin-inline:auto centers them.
- *
- * If they're wider than the surface:
- *    the track keeps its max-content width
- *    and remains horizontally scrollable.
- */
+/* =========================
+   TRACK
+========================= */
+
 .tech-dock__track {
   width:
     max-content;
@@ -134,6 +130,9 @@
   flex:
     0 0 auto;
 
+  min-width:
+    0;
+
   display:
     flex;
 
@@ -142,6 +141,9 @@
 
   align-items:
     center;
+
+  justify-content:
+    flex-end;
 
   gap:
     0.5rem;
@@ -165,6 +167,9 @@
       5vw,
       3.8rem
     );
+
+  flex:
+    0 0 auto;
 
   display:
     flex;
@@ -381,6 +386,7 @@
 }
 
 /* Keyboard accessibility */
+
 .tech-dock__item:focus-within {
   .tech-dock__icon {
     color:
@@ -433,60 +439,294 @@
 }
 
 /* =========================
-   MOBILE
+   TABLET / MOBILE
 ========================= */
 
 @media (
-  max-width: 600px
+  max-width: 700px
 ) {
   .tech-dock {
     width:
       100%;
+
+    max-width:
+      none;
   }
 
+  /*
+   * Stop treating the stack like a
+   * horizontally scrolling desktop dock.
+   */
   .tech-dock__surface {
     width:
       100%;
 
+    max-width:
+      100%;
+
     padding:
-      0.6rem;
+      0.75rem;
+
+    overflow:
+      visible;
   }
 
+  /*
+   * 6 technologies:
+   *
+   * [ 01 ][ 02 ][ 03 ]
+   * [ 04 ][ 05 ][ 06 ]
+   *
+   * 5 technologies:
+   *
+   * [ 01 ][ 02 ][ 03 ]
+   * [ 04 ][ 05 ]
+   */
   .tech-dock__track {
-    margin-inline:
-      auto;
+    width:
+      100%;
+
+    min-width:
+      0;
+
+    margin:
+      0;
+
+    display:
+      grid;
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    align-items:
+      start;
+
+    justify-content:
+      stretch;
+
+    gap:
+      0.75rem
+      0.55rem;
+  }
+
+  .tech-dock__item {
+    width:
+      100%;
+
+    min-width:
+      0;
+
+    flex:
+      none;
+
+    gap:
+      0.42rem;
   }
 
   .tech-dock__icon {
     width:
-      2.9rem;
+      clamp(
+        2.7rem,
+        12vw,
+        3.15rem
+      );
 
     height:
-      2.9rem;
+      clamp(
+        2.7rem,
+        12vw,
+        3.15rem
+      );
+
+    margin-inline:
+      auto;
+  }
+
+  .tech-dock__label {
+    width:
+      100%;
+
+    max-width:
+      none;
+
+    min-height:
+      2.4em;
+
+    overflow:
+      visible;
+
+    font-size:
+      clamp(
+        0.45rem,
+        2vw,
+        0.52rem
+      );
+
+    line-height:
+      1.2;
+
+    text-overflow:
+      clip;
+
+    white-space:
+      normal;
+
+    overflow-wrap:
+      anywhere;
+  }
+
+  /* =====================
+     COMPACT MOBILE
+  ===================== */
+
+  .tech-dock--compact {
+    width:
+      100%;
+
+    .tech-dock__surface {
+      width:
+        100%;
+
+      padding:
+        0.7rem;
+    }
+
+    .tech-dock__track {
+      width:
+        100%;
+
+      min-width:
+        0;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(
+            0,
+            1fr
+          )
+        );
+
+      gap:
+        0.7rem
+        0.45rem;
+    }
+
+    .tech-dock__item {
+      width:
+        100%;
+
+      min-width:
+        0;
+    }
+
+    .tech-dock__icon {
+      width:
+        2.65rem;
+
+      height:
+        2.65rem;
+
+      margin-inline:
+        auto;
+    }
+
+    .tech-dock__label {
+      width:
+        100%;
+
+      max-width:
+        none;
+
+      min-height:
+        2.4em;
+
+      overflow:
+        visible;
+
+      font-size:
+        0.46rem;
+
+      line-height:
+        1.2;
+
+      white-space:
+        normal;
+
+      text-overflow:
+        clip;
+
+      overflow-wrap:
+        anywhere;
+    }
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (
+  max-width: 360px
+) {
+  .tech-dock__surface {
+    padding:
+      0.65rem
+      0.5rem;
+  }
+
+  .tech-dock__track {
+    gap:
+      0.65rem
+      0.35rem;
+  }
+
+  .tech-dock__icon {
+    width:
+      2.55rem;
+
+    height:
+      2.55rem;
+  }
+
+  .tech-dock__label {
+    font-size:
+      0.43rem;
   }
 
   .tech-dock--compact {
     .tech-dock__surface {
       padding:
-        0.5rem;
-    }
-
-    .tech-dock__icon {
-      width:
-        2.6rem;
-
-      height:
-        2.6rem;
+        0.6rem
+        0.45rem;
     }
 
     .tech-dock__track {
       gap:
-        0.36rem;
+        0.6rem
+        0.3rem;
+    }
+
+    .tech-dock__icon {
+      width:
+        2.45rem;
+
+      height:
+        2.45rem;
     }
 
     .tech-dock__label {
       font-size:
-        0.46rem;
+        0.42rem;
     }
   }
 }
@@ -501,6 +741,18 @@
   .tech-dock__label {
     opacity:
       0.9;
+  }
+
+  /*
+   * Hover translation is useful with a
+   * mouse, but on touch it can create
+   * weird sticky hover states.
+   */
+  .tech-dock__item:hover {
+    .tech-dock__icon {
+      transform:
+        none;
+    }
   }
 }
 

@@ -1140,9 +1140,19 @@
 @media (
   max-width: 390px
 ) {
+  /*
+   * Closed cards stay compact.
+   * Active cards need enough vertical room
+   * for 6 technologies in a 2-column grid.
+   */
   .stack-area {
     height:
       230px;
+  }
+
+  .stack-area--active {
+    height:
+      320px;
   }
 
   .stack-area__tech-grid {
@@ -1154,9 +1164,24 @@
           1fr
         )
       );
+
+    grid-auto-rows:
+      minmax(
+        62px,
+        1fr
+      );
+
+    align-content:
+      stretch;
   }
 
   .stack-area__tech {
+    min-height:
+      0;
+
+    padding:
+      0.6rem;
+
     > span {
       font-size:
         0.48rem;
