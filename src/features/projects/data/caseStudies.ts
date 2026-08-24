@@ -1,4 +1,4 @@
-﻿import { assetUrl } from '../../../shared/utils/assetUrl';
+import { assetUrl } from '../../../shared/utils/assetUrl';
 import type {
   CaseStudy,
   CaseStudyImage,
@@ -121,7 +121,7 @@ const ARCANA_GALLERY: CaseStudyImage[] =
           `ARCANA application screenshot ${number}`,
 
         caption:
-          `ARCANA application interface â€” view ${number}.`,
+          `ARCANA application interface — view ${number}.`,
       };
     },
   );
@@ -222,14 +222,14 @@ const KAVE_GALLERY: CaseStudyImage[] =
           `KAVE Sys application screenshot ${number}`,
 
         caption:
-          `KAVE Sys inventory and operations interface â€” view ${number}.`,
+          `KAVE Sys inventory and operations interface — view ${number}.`,
       };
     },
   );
 
 
 /* =========================================================
-   EMILY LIMÃ“N GALLERY
+   EMILY LIMÓN GALLERY
 ========================================================= */
 
 const NORA_GALLERY: CaseStudyImage[] =
@@ -247,10 +247,10 @@ const NORA_GALLERY: CaseStudyImage[] =
           assetUrl(`/images/projects/nora/pz ${number}.png`),
 
         alt:
-          `Emily LimÃ³n companion system screenshot ${number}`,
+          `Emily Limón companion system screenshot ${number}`,
 
         caption:
-          `Project Zomboid companion system, dialogue and gameplay â€” view ${number}.`,
+          `Project Zomboid companion system, dialogue and gameplay — view ${number}.`,
       };
     },
   );
@@ -270,7 +270,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'meridian',
 
     eyebrow:
-      'FEATURED CASE STUDY Â· 01',
+      'FEATURED CASE STUDY · 01',
 
     title:
       'MERIDIAN',
@@ -605,7 +605,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'arcana',
 
     eyebrow:
-      'AI CASE STUDY Â· 02',
+      'AI CASE STUDY · 02',
 
     title:
       'ARCANA',
@@ -739,7 +739,7 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Multiple Spreads',
 
         description:
-          'The application supports layouts with different card counts and positions, including Past Â· Present Â· Future and Celtic Cross configurations.',
+          'The application supports layouts with different card counts and positions, including Past · Present · Future and Celtic Cross configurations.',
       },
 
       {
@@ -890,7 +890,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'roma-app',
 
     eyebrow:
-      'CLIENT CASE STUDY Â· 03',
+      'CLIENT CASE STUDY · 03',
 
     title:
       'Roma APP',
@@ -1174,7 +1174,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'kave-sys',
 
     eyebrow:
-      'BUSINESS CASE STUDY Â· 04',
+      'BUSINESS CASE STUDY · 04',
 
     title:
       'KAVE Sys',
@@ -1450,7 +1450,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
 
   /* =======================================================
-     EMILY LIMÃ“N
+     EMILY LIMÓN
   ======================================================= */
 
   {
@@ -1458,7 +1458,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'nora-hayes',
 
     eyebrow:
-      'SYSTEMS CASE STUDY Â· 05',
+      'SYSTEMS CASE STUDY · 05',
 
     title:
       'Emily Limón Companion Patch',
